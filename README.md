@@ -1,6 +1,10 @@
 # CSE310
 ### CSE310 - PROGRAMMING IN JAVA (21222)
-
+```bash
+  https://www.youtube.com/channel/UCp6MFWao5vWRnyRCxBsKnfw
+  
+  https://www.instagram.com/saurav_hathi/
+```
 https://www.youtube.com/channel/UCp6MFWao5vWRnyRCxBsKnfw
 
 https://www.instagram.com/saurav_hathi/
