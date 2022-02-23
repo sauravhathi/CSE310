@@ -1,0 +1,55 @@
+// 38
+
+
+package q11289;
+public class NonStaticInitBlockDemo {
+	public static void main(String[] args) {
+		A a1 = new A();
+		A a2 = new A();
+	}
+}
+class A {
+	private int value;
+
+	{
+		value = 3;
+		System.out.println("In non-static init block 1");
+	}
+	public A() {
+		System.out.println("In constructor");
+		System.out.println("value = " + value);
+	}
+
+	{
+		System.out.println("In non-static init block 2");
+	}
+}
+
+
+_____________________________________
+
+
+
+package q11290;
+public class StaticInitBlockDemo {
+	public static void main(String[] args) {
+		A a1 = new A();
+		A a2 = new A();
+	}
+}
+class A {
+
+	static {
+		System.out.println("In static init block 1");
+	}
+	public A() {
+		System.out.println("In constructor");
+	}
+	
+	static {
+		System.out.println("In static init block 2");
+	}
+}
+
+
+_______________________________________

@@ -1,0 +1,186 @@
+//26
+
+package q11119;
+public class Person {
+	private String name;
+	private int age;
+	public Person(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+	public String getName() {
+		return name;
+	}
+	public String toString() {
+		return "Person [name = " + name + ", age = " + age + "]";
+	}
+	public static void main(String[] args) {
+		Person p1 = new Person("Albert Einstein", 25);
+		Person p2 = new Person("Niels Bohr", 24);
+		System.out.println("p1 = " + p1);
+		System.out.println("p2 = " + p2);
+		System.out.println("name of p1 is : " + p1.getName());
+		System.out.println("name of p2 is : " + p2.getName());
+	}
+}
+
+__________________________
+
+package q11115;
+
+public class Employee{
+	String name;
+	int age;
+    String designation;
+	double salary;
+	
+		public void setData(String name, int age, String designation, double salary){
+		this.name = name;
+		this.age = age;
+		this.designation = designation;
+		this.salary = salary;
+		
+		}
+	
+	public void displayData(){
+		System.out.println("Name : "+ name);
+		System.out.println("Age : "+ age);
+		System.out.println("Designation : "+designation);
+		System.out.println("Salary : "+ salary);
+	}
+	
+	public static void main(String[] args){
+		
+		int age = Integer.parseInt(args[1]);
+		Double salary = Double.parseDouble(args[3]);
+		
+		Employee e1 = new Employee();
+		e1.setData(args[0],age,args[2],salary);
+		e1.displayData();
+	}
+}
+
+________________________
+
+package q11116;
+
+public class Staff{
+	int id;
+	String name;
+	
+	public void show(int id, String name){
+		System.out.println("Id : "+id);
+		System.out.println("Name : "+ name);
+	}
+	
+	public static void main(String[] args){
+		
+		int id = Integer.parseInt(args[0]);
+		Staff st1 = new Staff();
+		
+		st1.show(id,args[1]);
+	}
+}
+
+_____________________
+
+package q11117;
+public class Box {
+	float l,b,h;
+	public Box(float l, float b, float h) {
+	
+		this.l = l;
+		this.b = b;
+		this.h = h;
+	}
+	public float volume() {
+		
+		return l*b*h;
+		
+	}
+	public int compare(Box b) {
+	    
+	    if(this.volume() > b.volume()){
+	    	return 1;
+	    } else{
+	    	return -1;
+	    }
+		
+	}
+	public static void main(String args[]) {
+		int flag;
+		Box box1 = new Box(Float.parseFloat(args[0]), Float.parseFloat(args[1]), Float.parseFloat(args[2]));
+		Box box2 = new Box(Float.parseFloat(args[3]), Float.parseFloat(args[4]), Float.parseFloat(args[5]));
+		flag = box1.compare(box2);
+		if (flag == 1)
+			System.out.println("box1 is larger than box2");
+		else if (flag == 0)
+			System.out.println("box1 is same size as box2");
+		else
+			System.out.println("box1 is smaller than box2");
+	}
+}
+
+
+______________________
+
+B,E
+
+______________________
+
+package q11121;
+class Person {
+	private String name;
+	private int age;
+	
+	public Person(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public int getAge() {
+		return age;
+	}
+	
+	public void setAge(int age) {
+		if (age > 0) { 
+			this.age = age;	
+		}
+	}
+	
+	public String toString() {
+		return "Person [name = " + name + ", age = " + age + "]";
+	}
+}
+
+public class Test {	
+	public static void main(String[] args) {
+		Person p1 = new Person("Albert Einstein", 25);
+		System.out.println("name of p1 is : " + p1.getName());
+	}
+}
+
+________________________
+
+C
+
+_______________________
+
+
+C,E,F
+
+______________________
+
+
+B,D
+
+______________________
+

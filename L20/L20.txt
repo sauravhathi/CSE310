@@ -1,0 +1,316 @@
+// L20
+// Saurav Hathi
+// 
+
+
+
+package q11039;
+
+public class BubbleSorting{
+	public static void bubbleSort(int[] array){
+		
+		int arraySize = array.length;
+		
+		int temp;
+		
+		for(int i = 0; i<arraySize-1; i++){
+			
+			for(int j = 0; j<arraySize-i-1; j++){
+				
+				if(array[j] > array[j+1]){
+					temp = array[j];
+				    array[j] = array[j+1];
+				    array[j+1] = temp;
+				}
+			}
+		}
+		
+		for(int k = 0; k<arraySize; k++){
+			
+			System.out.println(array[k]);
+		}
+	}
+}
+
+
+__________________________
+
+
+package q11040;
+
+public class InsertionSorting{
+	public static void insertionSort(int[] array){
+		
+		int sizeOfArray = array.length;
+		
+		for(int  i = 1; i < sizeOfArray; i++){
+			
+			int key = array[i];
+			int j = i-1;
+			
+			while(j >= 0 && key < array[j]){
+				
+				array[j+1] = array[j];
+				--j;
+			}
+			
+			array[j+1] = key;
+		}
+		
+		for(int k = 0; k<sizeOfArray; k++){
+			
+			System.out.println(array[k]);
+		}
+	}
+}
+
+
+
+__________________________
+
+
+package q11041;
+
+public class SelectionSortingLargestElement{
+	public static void selectionSortLargestEle(int[] array){
+		
+		int sauravHathi = array.length;
+		
+		for(int i = 0; i < sauravHathi-1; i++){
+			
+			int lowest = i;
+			
+			for(int j = i+1; j<sauravHathi; j++){
+				
+				if(array[j] < array[lowest]){
+					lowest = j;
+				}
+			}
+			
+			int temp = array[i];
+			array[i] = array[lowest];
+			array[lowest] = temp;
+		}
+		
+		for(int k = 0; k<sauravHathi; k++){
+			
+			System.out.println(array[k]);
+		}
+	}
+}
+
+
+__________________________
+
+
+
+package q11042;
+
+public class SelectionSortingSmallestElement{
+	public static void selectionSortSmallestEle(int[] array){
+		
+		int smallest;
+		int subscribe = array.length;
+		
+		for(int i = 0; i < subscribe-1; i++){
+			
+			smallest = i;
+			
+			for(int j = i+1; j < subscribe; j++){
+				
+				if(array[j] < array[smallest]){
+					
+					smallest = j;
+				}
+			}
+			
+			int temp = array[smallest];
+			array[smallest] = array[i];
+			array[i] = temp;
+		}
+		
+		for(int k = 0; k < subscribe; k++){
+			
+			System.out.println(array[k]);
+		}
+	}
+}
+
+
+______________________________
+
+
+
+
+
+private void doMergeSort(int lowerIndex, int higherIndex) {
+	
+	  
+	  
+	    if(lowerIndex < higherIndex) {
+	    	
+	    	   int middle = lowerIndex + (higherIndex - lowerIndex) / 2;
+	    	   
+	    	      doMergeSort(lowerIndex, middle);
+	    	      
+	    	         doMergeSort(middle+1, higherIndex);
+	    	         
+	    	            mergeParts(lowerIndex, middle, higherIndex);
+	    	            
+	    }
+	    
+	      
+	      
+	       
+	       
+}
+
+ private void mergeParts(int lowerIndex, int middle, int higherIndex) {
+ 	
+ 	  
+ 	  
+ 	    for(int i = lowerIndex; i <= higherIndex; i++){
+ 	    	
+ 	    	   
+ 	    	   
+ 	    	      tempMergArr[i] = array[i];
+ 	    	      
+ 	    }
+ 	    
+ 	      int i = lowerIndex;
+ 	      
+ 	        int j = middle + 1;
+ 	        
+ 	          int k = lowerIndex;
+ 	          
+ 	            
+ 	            
+ 	              while(i <= middle && j <= higherIndex){
+ 	              	
+ 	              	   
+ 	              	   
+ 	              	      if(tempMergArr[i] <= tempMergArr[j]){
+ 	              	      	
+ 	              	      	    
+ 	              	      	    
+ 	              	      	        array[k] = tempMergArr[i];
+ 	              	      	        
+ 	              	      	            i++;
+ 	              	      	            
+ 	              	      } else{
+ 	              	      	
+ 	              	      	    
+ 	              	      	    
+ 	              	      	        array[k] = tempMergArr[j];
+ 	              	      	        
+ 	              	      	            j++;
+ 	              	      	            
+ 	              	      	                
+ 	              	      	                
+ 	              	      }
+ 	              	      
+ 	              	         k++;
+ 	              	         
+ 	              }
+ 	              
+ 	                
+ 	                
+ 	                  while(i <=middle){
+ 	                  	
+ 	                  	   
+ 	                  	   
+ 	                  	      array[k] = tempMergArr[i];
+ 	                  	      
+ 	                  	         k++;
+ 	                  	         
+ 	                  	            i++;
+ 	                  	            
+ 	                  }
+ 	                    
+ }}
+
+
+
+
+________________________________
+
+
+
+package q11044;
+
+public class LinearSearch{
+	
+	public static int linearS(int[] array, int key){
+		
+		int sizeOfArray = array.length;
+		
+		for(int i = 0; i < sizeOfArray; i++){
+			
+			if(array[i] == key){
+				
+				return i;
+			}
+		}
+		return -1;
+	}
+	public static void linearSearch(int[] array, int key){
+		
+		int subscribe = linearS(array, key); 
+		
+		if(subscribe == -1){
+			
+			System.out.println("Search element "+key+" is not found");
+		} else{
+			
+			System.out.println("Search element "+key+" is found at position : "+subscribe);
+		}
+	}
+}
+
+
+
+_____________________________________
+
+
+
+package q11045;
+
+public class BinarySearch{
+	public static int binaryS(int[] array, int key){
+		int low = 0;
+		int high = array.length - 1;
+		
+		while(low <= high){
+			
+			int mid = low +(high - low) / 2;
+			if(array[mid] == key){
+				return mid;
+			}
+			
+			if(array[mid] < key){
+				
+				low = mid + 1;
+			} else{
+				
+				high = mid - 1;
+			}
+		}
+		return -1;
+	}
+	public static void binarySearch(int[] array, int key){
+		
+		int subscribe = binaryS(array, key);
+		
+		if(subscribe == -1){
+			
+			System.out.println("Search element "+key+" is not found");
+		} else{
+			
+			System.out.println("Search element "+key+" is found at position : "+subscribe);
+		}
+	}
+}
+
+
+
+______________________________

@@ -1,0 +1,70 @@
+//30
+
+package q11185;
+public class StringFormatting {
+	public static void main(String[] args) {
+		int iVar = 432000;
+		System.out.printf("Integer variable = %d%n", iVar);
+		double dVar = 3.14159;
+		System.out.printf("Double variable = %f%n", dVar);
+		String str = "Demo";
+		System.out.printf("String variable = %s%n", str);
+	}
+}
+
+______________
+
+package q11186;
+public class StringFormatting {
+	public static void main(String[] args) {
+		int iVar = 2435;
+		
+		System.out.printf("%6d%n", iVar);
+		System.out.printf("%06d%n", iVar);
+		System.out.printf("%+06d%n", iVar);
+		System.out.printf("%+,06d%n", iVar);
+		System.out.printf("%-,6d%n", iVar);
+	}
+}
+
+_______________
+
+package q11187;
+public class StringFormatting {
+	public static void main(String[] args) {
+		float dVar = 3.141f;
+		
+		System.out.printf("%f%n", dVar);
+		System.out.printf("%.3f%n", dVar);
+		System.out.printf("%.2f%n", dVar);
+		System.out.printf("%08.4f%n", dVar);
+		System.out.printf("%+08.4f%n", dVar);
+	}
+}
+______________
+
+package q11188;
+
+public class TestFormatter{
+	public static void main(String[] args){
+		
+		int value = Integer.parseInt(args[0]);
+		
+		System.out.printf("%,+6d",value);
+	
+	}
+}
+
+_________________
+
+package q11189;
+
+public class TestFormatter{
+	public static void main(String[] args){
+		
+		double arg = Double.parseDouble(args[0]);
+		System.out.printf("%,+012.3f",arg);
+		
+	}
+}
+

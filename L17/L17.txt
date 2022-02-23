@@ -1,0 +1,430 @@
+// L17
+
+
+
+package q10880;
+public class ForDemo {
+	public static void main(String[] args) {
+		
+		 for (int i = 1; i <= 10; i++) {
+			System.out.println(i);
+		}
+	}
+}
+
+
+_______________________________
+
+
+package q10882;
+public class APowerN {
+	public void powerOf(int A, int N) {
+		int aPowerN = 1;
+
+		 for (aPowerN=N; aPowerN<Math.pow(A, N); aPowerN++) {
+			
+		}
+		System.out.println("APowerN = " + aPowerN);
+	}
+}
+
+
+________Saurav Hathi1____________________
+
+
+package q10883;
+public class FactorialCalculator {
+	public void factorial(int n) {
+		int factorial = 1;
+
+		for (int i=1; i<=n; i++){
+			factorial *= i;
+		}
+		System.out.println("Factorial of " + n + " = " + factorial);
+	}
+}
+
+
+_______________________________________
+
+
+
+package q10884;
+
+public class PrintAlphabet{
+	public static void main(String[] args){
+		for (char i ='A'; i<='Z'; i++){
+			System.out.println(i);
+		}
+	}
+}
+
+
+___________________________________
+
+
+package q10885;
+
+public class PrimeVerify{
+	public static void checkPrimeOrNot(int number){
+		
+		boolean isPrime=true;
+		
+		for (int i=2; i<=number/2; i++){
+			int temp=number%i;
+			if(temp==0){
+				isPrime=false;
+				break;
+			}
+		}
+		
+		if(isPrime){
+			System.out.println(number+" is a prime number");
+		} else {
+			System.out.println(number+" is not a prime number");
+		}
+	}
+}
+
+
+__________________________
+
+
+
+package q10886;
+
+public class Factorial{
+	public static void main(String[] args){
+		
+		int n=Integer.parseInt(args[0]), ffactorial=1;
+		
+		for (int i=1; i<=n; i++){
+			ffactorial *= i;
+		}
+		System.out.println("Factorial of "+n+" is " +ffactorial);
+	}
+}
+
+
+
+_________________________
+
+
+package q10888;
+public class WhileDemo {
+	public void printNumbers(int max) {
+		int num = 0;
+		
+		 while (max > num) {
+		 	num += 1;
+			System.out.println(num);
+			
+		}
+	}
+}
+
+
+___________________________
+
+
+package q10889;
+public class PrintFiveTimes {
+	public static void main(String[] args) {
+		int i = 0;
+		while (i < 5) { 
+			System.out.println("Ganga");
+			i = i + 1;
+		}
+	}
+}
+
+
+__________________________________
+
+
+package q10890;
+public class PrintThreeTimes {
+	public static void main(String[] args) {
+		int i = 0;
+		while (i < 3) {
+			System.out.println("Thames");
+			i += 1;;
+		}
+	}
+}
+
+
+_________________________________________
+
+
+package q10891;
+
+public class Armstrong{
+	public static void main(String[] args){
+		
+		int value = Integer.parseInt(args[0]);
+		
+		int remainder, sum=0, temp=value, i=0;
+		
+		for (temp=value; temp != 0; ++i) {
+			
+			temp /= 10;
+		}
+		for (temp=value; temp != 0; temp /= 10) {
+			
+			remainder = temp%10;
+			
+			sum += Math.pow(remainder, i);
+			
+		}
+		
+		if (sum == value){
+			
+			System.out.println("The given number "+value+" is an armstrong number");
+		
+		} else {
+			
+			System.out.println("The given number "+value+" is not an armstrong number");
+			
+		}
+	}
+}
+
+
+________________________________
+
+
+
+package q10892;
+
+public class PrimeNumbers {
+	
+	public void primeInLimits(int low, int high) {
+		
+		int i, count, flag;
+		
+		for (i = low; i<=high; i++){
+			
+			      count=0;
+			      
+			for (int j=1; j<= i; j++){
+			
+			if(i % j == 0){
+				count++;
+		     	}
+			}
+			
+			if (count == 2){
+			System.out.print(i+" ");
+			}
+		}
+		
+	}
+}
+
+
+
+_______________________________________
+
+
+package q10893;
+
+public class SumAndReverseNumber{
+	public static void sumAndReverseANumber(int number){
+		int sum=0,rev=0,remainder;
+		while (number != 0){
+			remainder=number%10;
+			number/=10;
+			sum +=remainder;
+			rev = rev*10+remainder;
+		}
+		System.out.println("Sum of digits : "+ sum +"\nReverse : "+ rev);
+	}
+}
+
+
+__________________________________________
+
+
+package q10894;
+
+public class NumberPalindrome {
+	
+	public void isNumberPalindrome(int number) {
+		
+		int remainder,rev=0;
+		
+		int num = number;
+		
+		while(number != 0){
+			remainder = number%10;
+			rev = rev*10+remainder;
+			number /= 10;
+		}
+		
+		if(rev == num) {
+			System.out.println(num +" is a palindrome");
+		} else {
+			System.out.println(num +" is not a palindrome");
+		}
+		
+	}
+}
+
+
+
+_________________________________________
+
+
+package q10895;
+public class DoWhileDemo {
+	public void printNumbers(int max) {
+		int num = 1,sum=0;
+		
+		   do {
+			System.out.println(num);
+			sum += num;
+			num++;
+		} while (max >= num) ;
+	}
+}
+
+
+
+___________________________________
+
+
+
+package q10896;
+
+public class FibonacciSeries{
+	public static void main(String[] args){
+		
+		int num = Integer.parseInt(args[0]);
+		int num1=0,num2=1,num3;
+		
+		System.out.print(num1);
+		
+		while(num2 < num){
+			
+			System.out.print(" "+num2);
+			
+			num3=num2+num1;
+			num1=num2;
+			num2=num3;
+			
+		}
+		
+		
+		
+	}
+}
+
+
+
+__________________________________
+
+
+
+package q10897;
+
+public class BreakDemo {
+	
+	public int calculateSum(int[] arr) {
+	
+		int sum=0;
+		for(int i=0; i<arr.length; i++){
+			
+			if(arr[i]<0){
+				break;
+			} else{
+				sum += arr[i];
+			}
+			
+		}
+		
+		return sum;
+	}
+}
+
+
+________________________________________
+
+
+
+package q10898;
+public class BreakTargetDemo {
+	public static void main(String[] args) {
+		OuterLoop:
+			for (int i = 20; i < 25; i++) {
+				System.out.println("i = " + i);
+				InnerLoop :
+					for (int j = 1; j < 10; j++) {
+					
+						if(i%11 == 0){
+							break OuterLoop;
+						}
+						
+						if(j%5 == 0){
+							break InnerLoop;
+						}
+
+						System.out.println("j = " + j);
+					}
+			}
+	}
+}
+
+
+_____________________________________________
+
+
+
+package q10899;
+public class ContinueDemo {
+	public void skipEven(int[] arr) {
+		for (int i = 0; i<arr.length; i++ ) {
+			if(arr[i]%2==0){
+				continue;
+			}
+			System.out.println(arr[i]);
+		}
+	}
+}
+
+
+
+___________________________________________________
+
+
+
+package q10900;
+public class ContinueTargetDemo {
+	public static void main(String[] args) {
+		OuterLoop:
+			for (int i = 20; i < 25; i++) {
+				System.out.println("i = " + i);
+				InnerLoop :
+					for (int j = 1; j < 10; j++) {
+
+						if(i%2==0){
+							continue OuterLoop;
+						}
+						
+						if(j%3==0){
+							continue InnerLoop;
+						}
+						
+						
+						System.out.println("j = " + j);
+					}
+			}
+	}
+}
+
+
+______________________________________________________
+
+
+
+A,B

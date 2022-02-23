@@ -1,0 +1,581 @@
+//25
+
+E
+
+______________________
+
+package q11126;
+public class Student {
+	private String id;
+	private String name;
+	private int age;
+	private char gender;
+	
+	public Student(String id, String name, int age, char gender) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	}
+	
+	public String toString() {
+		return "Student [id = " + id + ", name = " + name + ", age = " + age + ", gender = " + gender + "]";
+	}
+}
+
+______________________________
+
+
+package q11125;
+public class Student {
+	private String id;
+	private String name;
+	private int age;
+	private char gender;
+	
+	public Student(String id, String name, int age, char gender) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	}
+	
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	public String getId() {
+		return id;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	public int getAge() {
+		return age;
+	}
+	
+	public void setGender(char gender) {
+		this.gender = gender;
+	}
+	
+	public char getGender() {
+		return gender;
+	}
+	
+	public String toString() {
+		return "Student [id = " + id + ", name = " + name + ", age = " + age + ", gender = " + gender + "]";
+	}
+}
+
+
+
+___________________________________
+
+
+
+package q11128;
+public class Student {
+	private String id;
+	private String name;
+	private int age;
+	private char gender;
+	
+	public Student(String name, String id, int age, char gender) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	}
+	
+	
+	public String toString() {
+		return "Student [name = " + name + ", id = " + id + ", age = " + age + ", gender = " + gender + "]";
+	}
+	
+	
+}
+
+
+-__________________________________
+
+
+package q11129;
+public class Student {
+	private String id;
+	private String name;
+	private int age;
+	private char gender;
+	
+	public Student(String id, String name, int age, char gender) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	}
+	
+	public String toString() {
+		return "Student [name = " + name + ", id = " + id + ", age = " + age + ", gender = " + gender + "]";
+	}
+}
+
+
+_________________________________
+
+
+package q11130;
+public class Student {
+	private String id;
+	private String name;
+	private int age;
+	private char gender;
+	
+	public Student(String id, String name, int age, char gender) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	}
+	
+	public String toString() {
+		return "Student [name = " + name + ", id = " + id + ", age = " + age + ", gender = " + gender + "]";
+	}
+}
+
+
+
+__________________________________
+
+
+package q11131;
+public class Student {
+	private String id;
+	private String name;
+	private int age;
+	private char gender;
+	
+	public Student(String id, String name, int age, char gender) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	}
+	
+	public String toString() {
+		return "Student [name = " + name + ", id = " + id + ", age = " + age + ", gender = " + gender + "]";
+	}
+}
+
+
+_________________________________
+
+
+package q11132;
+public class Student {
+	private String id;
+	private String name;
+	private int age;
+	private char gender;
+	
+	public Student(String id, String name, int age, char gender) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	}
+	
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	public String getId() {
+		return id;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	public int getAge() {
+		return age;
+	}
+	
+	public void setGender(char gender) {
+		this.gender = gender;
+	}
+	
+	public char getGender() {
+		return gender;
+	}
+	
+	public String toString() {
+		return "Student [id = " + id + ", name = " + name + ", age = " + age + ", gender = " + gender + "]";
+	}
+}
+
+
+_______________________________
+
+
+
+package q11134;
+public class Student {
+	private String id;
+	private String name;
+	private int age;
+	private char gender;
+	
+	public Student(String id, String name, int age, char gender) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	}
+	
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	public String getId() {
+		return id;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	public int getAge() {
+		return age;
+	}
+	
+	public void setGender(char gender) {
+		this.gender = gender;
+	}
+	
+	public char getGender() {
+		return gender;
+	}
+	
+	public String toString() {
+		return "Student [id = " + id + ", name = " + name + ", age = " + age + ", gender = " + gender + "]";
+	}
+}
+
+
+
+___________________________
+
+
+
+package q11135;
+public class Student {
+	private String id;
+	private String name;
+	private int age;
+	private char gender;
+	
+	public Student(String id, String name, int age, char gender) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	}
+	
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	public String getId() {
+		return id;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	public int getAge() {
+		return age;
+	}
+	
+	public void setGender(char gender) {
+		this.gender = gender;
+	}
+	
+	public char getGender() {
+		return gender;
+	}
+	
+	public String toString() {
+		return "Student [id = " + id + ", name = " + name + ", age = " + age + ", gender = " + gender + "]";
+	}
+}
+
+
+
+________________________________
+
+
+
+package q11136;
+public class Student {
+	private String id;
+	private String name;
+	private int age;
+	private char gender;
+	
+	public Student(String id, String name, int age, char gender) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	}
+	
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	public String getId() {
+		return id;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	public int getAge() {
+		return age;
+	}
+	
+	public void setGender(char gender) {
+		this.gender = gender;
+	}
+	
+	public char getGender() {
+		return gender;
+	}
+	
+	public String toString() {
+		return "Student [id = " + id + ", name = " + name + ", age = " + age + ", gender = " + gender + "]";
+	}
+}
+
+
+
+__________________________
+
+
+package q11137;
+public class Student {
+	private String id;
+	private String name;
+	private int age;
+	private char gender;
+	
+	public Student(String id, String name, int age, char gender) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	}
+	
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	public String getId() {
+		return id;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	public int getAge() {
+		return age;
+	}
+	
+	public void setGender(char gender) {
+		this.gender = gender;
+	}
+	
+	public char getGender() {
+		return gender;
+	}
+	
+	public String toString() {
+		return "Student [id = " + id + ", name = " + name + ", age = " + age + ", gender = " + gender + "]";
+	}
+}
+
+
+
+______________________________
+
+
+package q11138;
+public class Student {
+	private String id;
+	private String name;
+	private int age;
+	private char gender;
+	
+	public Student(String id, String name, int age, char gender) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	}
+	
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	public String getId() {
+		return id;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	public int getAge() {
+		return age;
+	}
+	
+	public void setGender(char gender) {
+		this.gender = gender;
+	}
+	
+	public char getGender() {
+		return gender;
+	}
+	
+	public String toString() {
+		return "Student [id = " + id + ", name = " + name + ", age = " + age + ", gender = " + gender + "]";
+	}
+}
+
+
+______________________________
+
+
+
+package q11140;
+public class Student {
+	private String id;
+	private String name;
+	private int age;
+	private char gender;
+	
+	public Student(String id, String name, int age, char gender) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	}
+	
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	public String getId() {
+		return id;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	public int getAge() {
+		return age;
+	}
+	
+	public void setGender(char gender) {
+		this.gender = gender;
+	}
+	
+	public char getGender() {
+		return gender;
+	}
+	
+	public String toString() {
+		return "Student [id = " + id + ", name = " + name + ", age = " + age + ", gender = " + gender + "]";
+	}
+}
+
+
+
+________________________________
+
+
+
+A,C
+
+
+
+_________________________________

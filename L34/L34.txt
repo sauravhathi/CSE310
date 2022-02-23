@@ -1,0 +1,497 @@
+// L34
+
+
+
+
+A,B,C
+
+
+_____________________________
+
+
+
+package q11266;
+
+public class Addition {
+  public static void main(String[] args) {
+    int a = Integer.parseInt(args[0]);
+    int b = Integer.parseInt(args[1]);
+    float d = Float.parseFloat(args[2]);
+    float e = Float.parseFloat(args[3]);
+    double h = Double.parseDouble(args[4]);
+    double i = Double.parseDouble(args[5]);
+    Addition obj = new Addition();
+    obj.add(a, b);
+    obj.add(d, e);
+    obj.add(b, e);
+    obj.add(d, h, i);
+  }
+  void add(int a, int b) {
+    System.out.println("Sum of " + a + " and " + b + " : " + (a + b));
+  }
+  void add(int c, float d) {
+    System.out.println("Sum of " + c + " and " + d + " : " + (c + d));
+  }
+  void add(float e, float f) {
+    System.out.println("Sum of " + e + " and " + f + " : " + (e + f));
+  }
+  void add(float g, double h, double i) {
+    System.out.println("Sum of " + g + ", " + h + " and " + i + " : " + (g + h + i));
+  }
+
+}
+
+
+________________________________________
+
+
+
+package q11267;
+
+public class Box {
+  double width;
+  double height;
+  double depth;
+  Box(double w, double h, double d) {
+    width = w;
+    height = h;
+    depth = d;
+  }
+  Box() {
+    width = -1;
+    height = -1;
+    depth = -1;
+  }
+  Box(double length) {
+    width = length;
+    height = length;
+    depth = length;
+  }
+  public double volume() {
+    return width * height * depth;
+  }
+  public void display() {
+    if (width == -1 && height == -1 && depth == -1) {
+      System.out.println("Volume of Box() is : " + volume());
+    } else if (width != -1 && width == height) {
+      System.out.println("Volume of Box(" + height + ") is : " + volume());
+    } else {
+      System.out.println("Volume of Box(" + width + ", " + height + ", " + depth + ") is : " + volume());
+    }
+  }
+  public static void main(String[] args) {
+    double[] arr = new double[3];
+    for (int i = 0; i < args.length; i++) {
+      arr[i] = Double.parseDouble(args[i]);
+    }
+    if (arr[0] == 0) {
+      Box b = new Box();
+      b.display();
+    } else if (arr[1] == 0) {
+      Box b = new Box(arr[0]);
+      b.display();
+    } else {
+      Box b = new Box(arr[0], arr[1], arr[2]);
+      b.display();
+
+    }
+  }
+}
+
+
+
+
+________________________________________
+
+
+
+package q11268;
+public class OverloadArea {
+
+  Float area(float x) {
+    return x * x;
+  }
+  Float area(float x, float y) {
+    return x * y;
+
+  }
+
+  public static void main(String[] args) {
+
+    float f1 = Float.parseFloat(args[0]);
+    float f2 = Float.parseFloat(args[1]);
+    OverloadArea obj = new OverloadArea();
+    System.out.println("Area of square for side in meters " + f1 + " : " + obj.area(f1));
+    System.out.println("Area of rectangle for length and breadth in meters " + f1 + ", " + f2 + " : " + obj.area(f1, f2));
+
+  }
+}
+
+
+_______________________________________
+
+
+
+package q11269;
+public class InheritanceExample {
+	public static void main(String[] args) {
+		A a1 = new A();
+		System.out.println("a1.getAValue() : " + a1.getAValue());
+		B b = new B();
+		System.out.println("b.getBValue() : " + b.getBValue());
+		System.out.println("b.getAValue() : " + b.getAValue());
+		A a2 = b;
+		System.out.println("a2.getAValue() : " + a2.getAValue());
+	}
+}
+class A {
+	public int aValue = 2;
+	public int getAValue() {
+		return aValue;
+	}
+}
+class B extends A {
+	public int bValue = 3;
+	public int getBValue() {
+		return bValue;
+	}
+	public int getAValue() {
+		return 2 * aValue;
+	}
+}
+
+
+
+_________________________________________
+
+
+
+A,D
+
+
+
+___________________________
+
+
+
+package q11271;
+
+
+class Bank {  
+			public float calculateInterest(float principal, int time) { 
+									return 0;   
+			}
+						
+}
+class SBI{ 
+			public static final float INTEREST_RATE = 10.8f;   
+					    public float calculateInterest(float principal, int time) {    
+					    			    			return (principal * INTEREST_RATE * time) / 100;  
+					    }
+					    		    		
+}
+class ICICI{  
+			public static final float INTEREST_RATE = 11.6f;    
+						public Float calculateInterest(float i, int j) {  
+													return (i * INTEREST_RATE * j) / 100;   
+						}
+										
+}
+class AXIS{    
+			public static final float INTEREST_RATE = 12.3f;   
+						public Float calculateInterest(float i, int j) { 
+													return (i * INTEREST_RATE * j) / 100; 
+						}
+										
+}
+public class TestOverriding {    
+			public static void main(String[] args) {   
+									SBI sbi = new SBI();    
+														ICICI icici = new ICICI();    
+																			AXIS axis = new AXIS(); 
+																								float principal = Float.parseFloat(args[0]);	
+																													int time = Integer.parseInt(args[1]); 
+																																		System.out.println("SBI rate of interest = " + sbi.calculateInterest(principal, time));    
+																																							System.out.println("ICICI rate of interest = " + icici.calculateInterest(principal, time));       
+																																										    	System.out.println("AXIS rate of interest = " + axis.calculateInterest(principal, time)); 
+			}
+						
+}
+
+
+
+____________________________________
+
+
+
+package q11272;
+class SuperClass {
+	int num;
+	public SuperClass(int value) {
+		num = value;
+	}
+	public void printHello() {
+		System.out.println("Hello from SuperClass");
+	}
+}
+class SubClass extends SuperClass {
+	int num;
+	public SubClass(int value) {
+		super(value);
+		num = value + 5;
+		System.out.println("SuperClass number = " + super.num);
+		System.out.println("SubClass number = " + num);
+	}
+	public void printHello() {
+		super.printHello();
+		System.out.println("Hello from SubClass");
+	}
+}
+public class SuperKeyword {
+	public static void main(String[] args) {
+		SubClass obj = new SubClass(10);
+		obj.printHello();
+	}
+}
+
+
+
+__________________________________________
+
+
+
+package q11273;
+class Animal {
+
+  public Animal() {
+    System.out.println("Animal is created");
+  }
+
+  void eat() {
+    System.out.println("Eating something");
+  }
+
+}
+
+class Dog extends Animal {
+
+  public Dog() {
+    super();
+    System.out.println("Dog is created");
+  }
+
+  void eat() {
+    super.eat();
+    System.out.println("Eating bread");
+  }
+
+  void bark() {
+
+    System.out.println("Barking");
+
+  }
+
+  void work() {
+    eat();
+    bark();
+  }
+}
+
+public class ExampleOnSuper {
+  public static void main(String args[]) {
+    Dog d = new Dog();
+    d.work();
+  }
+}
+
+
+
+___________________________________________
+
+
+
+package q11274;
+class SuperClass {
+
+  int value1, value2;
+
+  SuperClass(int value1, int value2) {
+
+    this.value1 = value1;
+
+    this.value2 = value2;
+
+  }
+
+  void show() {
+
+    System.out.println("This is sub class show() method");
+  }
+
+}
+
+class SubClass extends SuperClass {
+
+  int value3, value4;
+
+  SubClass(int value1, int value2, int value3, int value4) {
+
+    super(value1, value2);
+
+    this.value3 = value3;
+
+    this.value4 = value4;
+
+  }
+
+  void show() {
+    super.show();
+
+    System.out.println("This is super class show() method");
+    System.out.println("value1 = " + value1);
+    System.out.println("value2 from super class = " + value2);
+    System.out.println("value3 = " + value3);
+    System.out.println("value4 = " + value4);
+
+  }
+}
+
+public class AccessUsingSuper {
+  public static void main(String[] args) {
+    SubClass obj =
+      new SubClass(Integer.parseInt(args[0]), Integer.parseInt(args[1]),
+        Integer.parseInt(args[2]), Integer.parseInt(args[3]));
+    obj.show();
+  }
+}
+
+
+
+______________________________________
+
+
+
+package q11275;
+public class PolymorphismExample2 {
+	public static void main(String[] args) {
+		A a = new A();
+		A b = new B();
+		C c = new C();
+		System.out.println(a.getName());
+		System.out.println(b.getName());
+		System.out.println(c.getName());
+	}
+}
+class A {
+	public String getName() {
+		return "A";
+	}
+}
+class B extends A {
+	public String getName() {
+		return super.getName() + " " + "B";
+	}
+}
+class C extends B {
+	public String getName() {
+		return super.getName() + " " + "C";
+	}
+}
+
+
+
+____________________________________________
+
+
+
+package q11276;
+public class PolymorphismExample2 {
+	public static void main(String[] args) {
+		Object a = new A();
+		Object b = new B();
+		Object c = new C();
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println(c.toString());
+	}
+}
+class A {
+	public String toString() {
+		return "A";
+	}
+}
+class B extends A {
+	public String toString() {
+		return super.toString() + " " + "B";
+	}
+}
+class C extends B {
+	public String toString() {
+		return super.toString() + " " + "C";
+	}
+}
+
+
+
+____________________________________________
+
+
+
+package q11277;
+public class RuntimePolymorphismDemo {
+  public static void main(String[] args) {
+    Animal ref1 = new Animal();
+    Animal ref2 = new Dog();
+    Animal ref3 = new Cow();
+    Animal ref4 = new Snake();
+    ref1.whoAmI();
+    ref2.whoAmI();
+    ref3.whoAmI();
+    ref4.whoAmI();
+  }
+}
+class Animal {
+  void whoAmI() {
+    System.out.println("I am a generic animal");
+  }
+}
+class Dog extends Animal {
+  void whoAmI() {
+    System.out.println("I am a dog");
+  }
+}
+class Cow extends Animal {
+  void whoAmI() {
+    System.out.println("I am a cow");
+  }
+}
+class Snake extends Animal {
+  void whoAmI() {
+    System.out.println("I am a snake");
+  }
+}
+
+
+
+__________________________
+
+
+package q11278;
+public class GetClassExample {
+	public static void main(String[] args) {
+		A a = new A();
+		B b = new B();
+		String text = "Ganga";
+		System.out.println("a.getClass() : " + a.getClass());
+		System.out.println("b.getClass() : " + b.getClass());
+		System.out.println("text.getClass() : " + text.getClass());
+	}
+}
+class A {
+}
+class B {
+}
+
+
+
+_______________________________________________

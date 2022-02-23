@@ -1,0 +1,83 @@
+//27
+
+package q11144;
+public class StringLiterals {
+	public static void main(String[] args) {
+		String aStr = "Himalayas";
+		String bStr = "are beautiful";
+		String spaceStr = " ";
+		String emptyStr = "";//This is an empty string that does nothing.
+		System.out.println(aStr + spaceStr + bStr + "." + emptyStr);
+	}
+}
+
+___________________
+
+package q11145;
+public class StringLiterals {
+	public static void main(String[] args) {
+		String str1 = "Encyclopedia";
+		String str2 = new String("Encyclopedia");
+		System.out.println("str1 == str2 : " + (str1 == str2));
+		System.out.println("str1.equals(str2) : " + (str1.equals(str2)));
+	}
+}
+
+____________________
+
+package q11146;
+public class EscapeSequence {
+	public static void main(String[] args) {
+		String textStr = "She said, \"It is wrongly called 'common sense' because it is rarely used\". \nWhat a wise saying!";
+		System.out.println(textStr);
+		char singleQuoteChar = '\'';
+		System.out.println("Single Quote Char = " + singleQuoteChar);
+		char backSlashChar = '\\';
+		System.out.println("Back Slash Char = " + backSlashChar);
+	}
+}
+
+________________________
+
+package q11147;
+public class EscapeSequence {
+	public static void main(String[] args) {
+		String text = "There is a single double-quote before \"BLUE";
+		System.out.println(text);
+	}
+}
+
+_________________________
+
+package q11148;
+public class EscapeSequence {
+	public static void main(String[] args) {
+		String text1 = "There are double-quotes around \"Red\"";
+		System.out.println(text1);
+	}
+}
+
+_______________________
+
+package q11149;
+public class EscapeSequence {
+	public static void main(String[] args) {
+		String text1 = "insert into Employee(id, name) values(\"10\",\"Meka\");";
+		String text2 = "insert into Employee(id, name) values(\"11\",\"Reka\");";
+		System.out.println(text1);
+		System.out.println(text2);
+	}
+}
+
+__________________________
+
+package q11150;
+public class StringConcatenation {
+	public static void main(String[] args) {
+		System.out.println("Hello!" + " I am learning Java.");
+		System.out.println("Total = " + 3 + 2);
+		System.out.println("Total = " + (3 + 2));
+	}
+}
+
+___________________________

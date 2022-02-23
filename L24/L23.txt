@@ -1,0 +1,68 @@
+//23
+
+
+A,C
+
+_______________________
+
+
+A.B
+
+__________________________
+
+
+A,B,C
+
+
+________________________
+
+
+A,C
+
+
+______________________
+
+
+D
+
+
+______________________
+
+
+
+package q11154;
+public class Student {
+	private String id;
+	private String name;
+	private int age;
+	private char gender;
+}
+
+
+
+__________________________
+
+
+
+package q11155;
+public class Student {
+	private String id;
+	private String name;
+	private int age;
+	private char gender;
+}
+
+
+__________________________
+
+
+package q11217;
+public class Student {
+	private String id;
+	private String name;
+	private int age;
+	private char gender;
+}
+
+
+_____________________________

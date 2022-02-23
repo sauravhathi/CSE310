@@ -1,0 +1,142 @@
+//28
+
+package q11151;
+public class StringMethods {
+	public static void main(String[] args) {
+		String str = "FiveTimesFive";
+		System.out.println("Length : " + str.length());
+		System.out.println("5th character : " + str.charAt(4));
+		System.out.println("Upper case : " + str.toUpperCase());
+		System.out.println("Lower case : " + str.toLowerCase());
+	}
+}
+
+__________________________
+
+package q11152;
+public class TestStringMethods{
+	public static void main(String[] args){
+		
+		System.out.println(args[0].length());
+	}
+}
+
+______________________
+
+package q11153;
+
+public class TestStringMethods{
+	public static void main(String[] args){
+		
+		System.out.println(args[0].charAt(4));
+	}
+}
+
+________________________
+
+package q11162;
+
+public class TestStringMethods{
+	public static void main(String[] args){
+		
+		System.out.println(args[0].toLowerCase());
+	}
+}
+
+_______________________
+
+package q11163;
+
+public class TestStringMethods{
+	public static void main(String[] args){
+		
+		System.out.println(args[0].toUpperCase());
+	}
+}
+
+_______________________
+
+package q11164;
+public class StringMethods {
+	public static void main(String[] args) {
+		String str1 = "Jurassic";
+		String str2 = "juraSSic";
+		System.out.println("equals : " + str1.equals(str2));
+		System.out.println("equalsIgnoreCase: " + str1.equalsIgnoreCase(str2));
+		System.out.println("startsWith " + str1.startsWith("Jur"));
+		System.out.println("endsWith " + str2.endsWith("Sic"));
+	}
+}
+
+_______________________
+
+package q11165;
+
+public class StringCompare{
+	public static void main(String[] args){
+		System.out.println(args[0].equals(args[1]));
+	}
+}
+
+____________________
+
+package q11166;
+
+public class StringCompare{
+	public static void main(String[] args){
+		
+		System.out.println(args[0].equalsIgnoreCase(args[1]));
+	}
+}
+
+_____________________
+
+package q11167;
+public class StringCompare{	
+	public static void main(String[] args){	
+		System.out.println(args[0].startsWith("pre"));
+	}
+}
+
+______________________
+
+package q11168;
+
+public class StringCompare{
+	public static void main(String[] args){
+		
+		System.out.println(args[0].endsWith("ed"));
+	}
+}
+
+______________________
+
+package q11169;
+public class StringCompare {
+	public static void main(String[] args) {
+		System.out.println("The result with equals : " + args[0].equals(args[1]));
+		System.out.println("The result with == : " + (args[0]==args[1]));
+	}
+}
+
+______________________
+
+package q11170;
+
+public class StringCompareTo{
+	public static void main(String[] args){
+		
+		int arg = args[0].compareTo(args[1]);
+		
+		if(arg > 0){
+			System.out.println("arg1 is lesser than arg2");
+		} else if(arg == 0){
+			System.out.println("arg1 and arg2 are equal");
+		} else if(arg < 0){
+			System.out.println("arg1 is greater than arg2");
+		}
+		
+	}
+}
+
+___________________________

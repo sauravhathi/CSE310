@@ -1,0 +1,835 @@
+//21
+//Saurav Hathi
+// https://www.youtube.com/channel/UCp6MFWao5vWRnyRCxBsKnfw
+
+
+
+package q11046;
+public class SumOfElements {
+	
+	public long sum(int[] arr) {
+		
+		long sum=0;
+		
+		for(int i = 0; i < arr.length; i++){
+			
+			sum += arr[i];
+		}
+		return sum;
+	}
+}
+
+
+___________________________
+
+
+package q11047;
+public class ReversePrint {
+	 
+	 public int[] reversePrint(int[] arr) {
+	 	
+	 	int[] ReversePrint = new int[arr.length];
+	 	
+	 	for(int i = 0; i < arr.length; i++){
+	 		
+	 		ReversePrint[i] = arr[arr.length-1-i];
+	 	}
+	 	return ReversePrint;
+	 }
+}
+
+
+_____________________________
+
+
+
+package q11048;
+
+public class ElementCheck {
+	
+ 	public boolean checkFirstOrLast(int[] arr, int arg) {
+		
+		boolean checkFirstOrLast = false;
+		
+		for(int i = 0; i<arr.length; i++){
+			
+			if(arr[0] == arg || arr[arr.length-1] == arg){
+				
+				checkFirstOrLast = true;
+
+			} else{
+				
+				return false;
+			}
+		}
+		
+		return checkFirstOrLast;
+	}
+}
+
+
+
+_______________________________
+
+
+
+package q11049;
+public class ElementCount {
+	public static void main(String[] args) {
+		
+		int[] arr = {1, 12, 9, 3, 5, 3, 78, 4, 3, 9, 18, 56, 1, 5};
+		int element = Integer.parseInt(args[0]);
+		int count = 0;
+		
+		for(int i = 0; i < arr.length; i++){
+			
+			if(arr[i] == element){
+				count++;
+			}
+		}
+		
+		System.out.println(count);
+	}
+}
+
+
+__________________________________
+
+
+
+package q11050;
+public class ElementCheck {
+	 
+	public boolean checkFirstOrLast(int[] arr1, int[] arr2) {
+		
+		boolean checkFirstOrLast = false;
+		
+		if(arr1[0] == arr2[0] || arr1[arr1.length-1] == arr2[arr2.length-1]){
+			
+			checkFirstOrLast = true;
+		} else {
+			
+			return false;
+		}
+		
+		return checkFirstOrLast;
+		
+	}
+}
+
+
+
+____________________________________
+
+
+package q11054;
+
+public class ElementCheck {
+	
+	public boolean elementFinder(int[] arr, int element) {
+
+		boolean foundEl = false;
+		int count = 0;
+		
+		for(int i = 0; i < arr.length; i++){
+			
+			if(arr[i] == element){
+				
+				count++;
+			}
+		}
+		
+		if(count > 1){
+			
+			foundEl = false;
+			return foundEl;
+			
+		} else{
+			
+			return true;
+		}
+		
+	}
+}
+
+
+_______________________________________
+
+
+
+package q11055;
+
+public class ElementCheck {
+
+	public boolean elementFinder(int[] arr) {
+		
+		if(arr[0] == arr[arr.length - 1]){
+			
+			boolean yes = true;
+			return yes;
+			
+		} else{
+			
+			return false;
+		}
+		
+	}
+}
+
+
+_______________________________
+
+
+package q11056;
+
+public class ElementCheck {
+	 
+	public boolean elementFinder(int[] arr) {
+		
+		boolean result = false;
+		int high = arr.length;
+		int num = 4;
+		
+		for(int i = 0; i < high; i++){
+			
+			if(arr[i] != num){
+				result = false;
+
+			} else if(high > num){
+				
+				result = false;
+			}
+			else{
+				
+				return true;
+			}
+		}
+		
+		return result;
+	
+	}
+}
+
+
+
+____________________________
+
+
+package q11057;
+
+public class SumOfElements {
+	
+		public int sum(int[] arr) {
+			
+			int sum = 0;
+			
+			for(int i = 0; i < arr.length; i++){
+				if(arr[i] > 0){
+					sum += arr[i];
+				}
+			}
+			return sum;
+	
+	}
+}
+
+
+
+_____________________________
+
+
+package q11058;
+
+public class SwapFirstAndLast{
+	public static void swap(int[] arr){
+		
+		int swap=0;
+		int size = arr.length;
+	
+			swap = arr[size-1];
+			arr[size-1] = arr[0];
+			arr[0] = swap;
+		
+		for(int i = 0; i < size; i++){
+			
+			System.out.println(arr[i]);
+		}
+	}
+}
+
+
+
+__________________________________
+
+
+package q11059;
+
+public class SequenceCheck {
+	
+	public boolean sequenceCheck(int[] arr) {
+		
+		int size = arr.length;
+		int count = 1;
+		boolean result = false;
+		
+		for(int i = 0; i < size-1; i++){
+			
+			if(arr[i] == 6){
+				
+				if(arr[i+1] == 9 && arr[i+2] == 12){
+					
+					result = true;
+				} else{
+					
+					return false;
+				}
+			}
+		}
+		return result;
+		
+	}
+}
+
+
+__________________________________
+
+
+package q11060;
+import java.util.Arrays;
+
+
+public class SequenceCheck {
+	
+	
+	public boolean sequenceCheck(int[] arr) {
+
+		int size = arr.length;
+		boolean sequenceCheck = false;
+		int a=1;
+		
+		for(int i = 0; i < size; i++){
+			
+			if(arr[i] == 1 && arr[i] == 2){
+				
+				sequenceCheck = true;
+			} else if(arr[i] == 2){
+				
+				sequenceCheck = true;
+			} else if(arr[i] == 3 && arr[i] == 1){
+				
+				sequenceCheck = true;
+			} else if(arr[i] < 0){
+				
+				sequenceCheck = false;
+				break;
+			}
+		}
+		
+		if(sequenceCheck == true){
+			
+		return sequenceCheck;
+		} else{
+			
+			return false;
+		}
+	}
+}
+
+
+
+__________________________________
+
+
+
+package q11061;
+
+public class FindMiddle {
+
+	public void findMiddle(int[] arr) {
+		
+		int size = arr.length;
+		int big = arr[0];
+		int end = size-1;
+
+		int mid,mid1;
+	
+		if(size%2 == 0){
+			
+			mid = arr[size/2-1];
+			
+			mid1 = arr[size/2];
+			
+			System.out.println(mid+"\n"+mid1);
+		} else{
+			
+			System.out.println(arr[size/2]);
+			
+		}
+		
+		
+	}
+		
+}
+
+
+
+_________________________________
+
+
+package q11062;
+
+public class SequenceCount {
+	
+	public int sequenceCount(int[] arr) {
+		
+		int size = arr.length;
+		int count=0;
+		
+		
+		for(int i = 0; i < size-1; i++){
+			
+			if(arr != null  && arr[i] == 1 && arr[i+1] == 1){
+					count++;
+	
+			  }
+		}
+		
+		return count;
+
+		
+	}
+}
+
+
+
+_______________________________
+
+
+package q11063;
+
+public class InitializeArray {
+	
+	public int[] initialize(int len, int ele) {
+		
+		int arr[] = new int[len];
+		
+		for(int i = 0; i < len; i++){
+			
+			arr[i]=ele;
+		}
+		return arr;
+		
+	}
+}
+
+
+
+_________________________________
+
+
+
+package q11064;
+
+public class SequenceCount {
+	
+	
+	public int sequenceCount(int[] arr) {
+		
+		int count=0,i=0;
+		
+		while( arr != null && i<arr.length-2){
+			if(arr[i+1] == 2*arr[i] && (arr[i+2] == 3*arr[i])){
+				count++;
+			}
+			i++;
+		}
+		return count;
+		
+	}
+}
+
+
+
+____________________________________
+
+
+package q11065;
+public class SumOfArrays {
+	
+	public int[] sum(int[] arr1, int[] arr2) {
+		
+		int[] result = new int[arr1.length];
+		
+			for(int i = 0, j = 0, k = 0; i < result.length; i++, j++, k++){
+				
+				if(arr1 != null && arr2 != null && arr1.length == arr2.length){
+					
+					result[k] =arr1[i]+arr2[j];
+					
+				} else{
+					
+					result[k] = arr1[i]+arr2[j];
+					
+				}
+		}
+
+		return result;
+		
+	}
+}
+
+
+
+________________________________
+
+
+package q11066;
+
+public class CompareArrays {
+	
+	public boolean compareArrays(int[] arr1, int[] arr2) {
+
+		boolean result = false;
+		
+		if(arr1.length == arr2.length){
+			
+			result = true;
+			
+		} else {
+			
+			result = false;
+			
+		}
+		return result;
+	}
+}
+
+
+
+_________________________________
+
+
+package q11067;
+
+public class CompareArrays {
+	
+	public boolean compareArrays(int[] arr1, int[] arr2) {
+		
+		int size1 = arr1.length;
+		int size2 = arr2.length;
+		boolean result = false;
+		
+		if(size1 == size2){
+			
+			result = true;
+			
+			for(int i = 0, j = 0; i < size1; i++, j++){
+				
+				if(arr1[i] == arr2[j]){
+					
+					result = true;
+					
+				} else{
+					
+					result = false;
+				}
+			}
+			
+		}
+		
+		else {
+			result = false;
+		}
+	
+		
+		return result;
+		
+		
+	}
+}
+
+
+
+__________________________________
+
+
+package q11068;
+public class ElementCheck {
+	
+	public boolean checkElement(int[] arr, int arg1, int arg2) {
+		
+		
+		boolean result = false;
+		
+		for(int i=0; i<arr.length; i++){
+			
+			if(arr[i] != arg1 && arr[i] != arg2){
+				
+				result = false;
+				break;
+				
+			}
+			else{
+				
+				result = true;
+			}
+		}
+		
+		return result;
+		
+	}
+}
+
+
+_________________________________
+
+
+package q11069;
+
+
+public class CountEvens {
+	
+	public int countEvens(int[] arr) {
+		
+		int count=0;
+		
+		for(int i=0; i<arr.length; i++){
+			
+			if(arr[i]%2 == 0){
+				count++;
+			}
+		}
+		return count;
+		
+		
+	}
+}
+
+
+_______________________________
+
+
+package q11070;
+
+public class ConcatenateArrays{
+	public static void concatenate(int[] arr1, int[] arr2){
+		
+		int[] arr3 = new int[arr1.length + arr2.length];
+		
+		for(int i=0; i<arr1.length; i++){
+
+			arr3[i] = arr1[i];
+			
+		}
+		for(int i=0, j=arr1.length; j<arr3.length && i < arr2.length;  i++, j++){
+			
+			arr3[j] = arr2[i];
+		}
+	
+	
+	   for(int i=0; i<arr3.length; i++){
+	   	
+	   	System.out.println(arr3[i]);
+	   	
+	   }
+	}
+}
+
+
+________________________________
+
+
+package q11071;
+
+public class ElementDiff {
+	
+	public int findDiff(int[] arr) {
+		
+		int largest = arr[0], smallest = arr[0];
+		int result=0;
+		
+		for(int i = 0; i < arr.length; i++){
+			
+			if(arr[i] > largest){
+				
+				largest = arr[i];
+				
+			}
+			
+			if(arr[i] < smallest){
+				
+				smallest = arr[i];
+			}
+		}
+		
+		result = largest - smallest;
+		
+		return result;
+		
+	}
+}
+
+
+_______________________________________
+
+
+package q11072;
+
+public class FindAverage {
+
+	public int findAverage(int[] arr) {
+		
+		int size=arr.length,sum=0;
+		int result=0;
+		
+		for(int i = 0; i < size; i++){
+			
+			sum = sum + arr[i];
+			
+		}
+		
+		result = sum/size;
+		
+		return result;
+		
+	}
+}
+
+
+__________________________________________
+
+
+package q11073;
+
+public class FindDuplicate {
+	
+	public boolean findDuplicate(int[] arr, int arg) {
+
+		int count=0;
+		
+		for(int i = 0; i < arr.length; i++){
+
+				if(arr[i] == arg){
+					
+					count++;
+				}
+		}
+		
+		if(count > 1){
+			
+			return true;
+			
+		} else{
+			
+			return false;
+		}
+		
+	}
+}
+
+
+_____________________________________
+
+
+package q11074;
+
+public class SumOfSameNumber {
+	
+	public boolean findSumOf(int[] arr, int arg) {
+		
+		int sum=0;
+		
+		boolean result = false;
+		
+		for(int i = 0; i < arr.length; i++){
+			
+			if(arr[i] == arg){
+				
+				sum += arr[i];
+			}
+		}
+		
+		if(sum >= 10 && arr != null){
+			
+			result = true;
+			return result;
+			
+		} else {
+			
+			result = false;
+			return result;
+			
+		}
+		
+	}
+}
+
+__________________________________
+
+
+package q11075;
+
+public class CountOfTwoNumbers {
+	
+	public boolean compareCountOf(int[] arr, int arg1, int arg2) {
+		
+		boolean result = false;
+		int count1=0, count2=0;
+		
+		for(int i = 0; i < arr.length; i++){
+			
+			if(arr[i] == arg1){
+				count1++;
+			}
+			if(arr[i] == arg2){
+				count2++;
+			}
+		}
+		
+		if(count1 > count2){
+			
+			result = true;
+			
+			return result;
+		} else {
+			result = false;
+			
+			return result;
+		}
+		
+	}
+}
+
+
+____________________________________
+
+
+package q11076;
+
+public class CheckAlternateNo {
+	
+	public boolean checkAlternate(int[] arr, int arg) {
+		
+		boolean result = false;
+		
+		for(int i = 0; i < arr.length; i += 2){
+			
+			if(arr[i] == arg){
+				
+				result = true;
+				
+			} else{
+				
+				result = false;
+				
+			}
+		}
+		
+		return result;
+		
+	}
+}
+
+
+
+

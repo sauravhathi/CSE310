@@ -1,0 +1,366 @@
+//22
+
+
+
+
+package q11082;
+
+public class ElementCheckInEveryPair {
+	
+	public boolean checkElement(int[] arr, int arg) {
+	
+		int size = arr.length;
+		boolean result = false;
+		
+		for(int i = 0; i < size; i++){
+			
+			if(arr[i]==arg || arr[i+1]==arg){
+				
+				result=true;
+				
+			} else if(arr[i]!=arg || arr[i+1]!=arg){
+				
+				result=false;
+				break;
+			}
+		}
+		return result;
+		
+	}
+}
+
+
+
+___________________________________
+
+
+
+
+package q11087;
+
+public class CompareArrays {
+	
+	public int compare(int[] arr1, int[] arr2) {
+
+		
+		int count=0;
+		for (int i = 0, j = 0; i <arr1.length; i++, j++){
+			
+			if(arr1[i]-arr2[j] > -2 && arr1[i]-arr2[j] < 2){
+				
+				count++;
+			}
+		}
+		
+		return count;
+		
+		
+	}
+}
+
+
+
+_________________________________
+
+
+package q11088;
+
+public class CheckSurroundedElement {
+	
+	public void checkElement(int[] arr) {
+		
+		
+		for(int i = 1; i < arr.length; i++){
+			
+			if(arr[i-1] != arr[i] && arr[i+1] != arr[i]){
+				
+				System.out.println(arr[i]);
+			}
+		}
+		
+	}
+}
+
+
+_____________________________
+
+
+package q11089;
+
+public class ReorderArray {
+	 
+	public int[] reorder(int[] arr) {
+		
+		int size = arr.length;
+		int i = size-1, j=size-1;
+		
+		while(i >= 0){
+			if(arr[i] != 0){
+				arr[j] = arr[i];
+				j--;
+			}
+			i--;
+		}
+		
+		while(j >= 0){
+			arr[j] = 0;
+			j--;
+		}
+		
+		return arr;
+		
+	}
+}
+
+
+
+__________________________________________
+
+
+package q11090;
+
+public class ReorderArray {
+	 
+	public int[] reorder(int[] arr) {
+			int size = arr.length;
+			int temp=0,count=0;
+			
+			for(int i = 0; i < size; i++){
+				if(arr[i]%2==0){
+					
+					for(int j=i; j > count; j--){
+						temp = arr[j-1];
+						arr[j-1] = arr[j];
+						arr[j] = temp;
+					}
+					count++;
+				}
+			}
+			
+			return arr;
+	}
+}
+
+
+
+______________________________________
+
+
+
+package q11091;
+
+public class MultiplesInArray{
+	public static void findMultiples(int[] arr, int m1, int m2){
+		int size = arr.length;
+		
+		for(int i = 0; i< size; i++){
+			
+			if(arr[i]%m1==0 && arr[i]%m2==0){
+				System.out.println(arr[i]+" is multiple of "+m1+" and "+m2);
+			} else if(arr[i]%m2==0){
+				System.out.println(arr[i]+" is multiple of "+m2);
+			} else if(arr[i]%m1==0){
+				System.out.println(arr[i]+" is multiple of "+m1);
+			} else{
+				System.out.println(arr[i]);
+			}
+		}
+	}
+}
+
+
+
+___________________________________
+
+
+
+package q11092;
+
+public class FindCenteredAverage{
+	
+	public int findCenteredAverage(int[] arr){
+		
+		
+		int n = arr.length;  
+		int temp = 0;  
+		for(int i=0; i < n; i++){  
+			for(int j=1; j < (n-i); j++){  
+				if(arr[j-1] > arr[j]){  
+					 temp = arr[j-1];  
+					   arr[j-1] = arr[j];  
+					      arr[j] = temp;  
+				}  
+				                          
+			}  
+		}  
+		
+		int sum=0;
+		int count=0;
+		
+		for(int i = 1; i < arr.length-1; i++){
+			sum += arr[i];
+			count++;
+		}
+		
+		
+		
+		int av = sum/count;
+		
+		return av;
+
+	}
+}
+
+
+
+______________________________________
+
+
+
+
+package q11093;
+public class FindSumIgnoringSection {
+	public int findSum(int[] arr, int ignore1, int ignore2) {
+		
+		int sum = 0;
+        int size = arr.length;
+		boolean result=true;
+		for(int i = 0; i < size; i++){
+			if(arr[i] != ignore1 && result == true ){
+				sum += arr[i];
+			} else if(arr[i] == ignore1){
+				result = false;
+			} else if(arr[i] == ignore2){
+				result = true;
+			}
+		}
+		return sum;
+	}
+}
+
+
+
+_________________________________
+
+
+
+package q11094;
+
+public class EitherOfASequence {
+	
+	public boolean checkSequences(int[] arr) {
+		
+		int size = arr.length;
+		boolean found = false, found1 = false, found2 = false, found3 = false;
+		for(int i=0; i<size-1; i++) {
+			if(arr[i]==18) {
+				found = true;
+				if(arr[i+1]==28) {
+					found1 = true;
+				}
+			} else if(arr[i]==33){
+				found2 = true;
+				if(arr[i+1]==36) {
+					found3 = true;
+				}
+			}
+		}
+		
+		boolean flag1 = found && found1;
+		boolean flag2 = found2 && found3;
+		
+		if(flag1 == flag2) {
+			found = false;
+		} else if(flag1 || flag2) {
+			found = true;
+		  }
+		  
+		  return found;
+		
+	}
+}
+
+
+______________________________
+
+
+
+package q11095;
+
+public class SequenceOfEvens {
+	
+	public void checkEvenSequence(int[] arr) {
+		
+		boolean result=false;
+		int size = arr.length;
+		
+		for (int i = 0; i < size-1; i++) {
+			if(arr[i] % 2 == 0) {
+				if(arr[i] % 2 == 0 && arr[i+1] % 2 == 0 && arr[i+2] % 2 == 0) {
+					result = true;
+					break;
+				}
+			}
+		}
+		System.out.println(result);
+		
+	}
+}
+
+
+________________________________
+
+
+package q11096;
+
+public class SymmetricalArrayCheck {
+	
+	public boolean checkSymmetry(int[] arr, int n) {
+		
+		boolean checkSymmetry = true;
+		
+		for(int i = 0; i < n; i++){
+			if(arr[i] != arr[arr.length-n+i]){
+				checkSymmetry=false;
+				break;
+			}
+		}
+		return checkSymmetry;
+		
+	}
+}
+
+
+_______________________________
+
+
+
+package q11097;
+
+public class SequenceCheck {
+	
+	public boolean checkSequence(int[] arr) {
+
+		boolean result = false;
+	   
+	   for(int i = 0; i < arr.length-1; i++){
+	   	if(arr[i]==arr[i]){
+	   		if(arr[i+1]==1+arr[i] && arr[i+2]==2+arr[i]){
+	   		result = true;
+	   		break;
+	   		} else{
+	   			result = false;
+	 
+	   		}
+	   	}
+	   }
+	   return result;
+		
+	}
+}
+
+
+
+_____________________________
+
+

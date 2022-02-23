@@ -1,0 +1,340 @@
+// L37
+
+
+
+package q11285;
+public class AbstractDemo {
+	public static void main(String[] args) {
+		Greeting english = new EnglishGreeting();
+		Greeting spanish = new SpanishGreeting();
+		System.out.println(english.getStandardMessage("Winston"));
+		System.out.println(english.getCustomMessage("Winston"));
+		System.out.println(spanish.getStandardMessage("Martin"));
+		System.out.println(spanish.getCustomMessage("Martin"));
+	}
+}
+interface Greeting {
+	public String getStandardMessage(String name);
+	public String getCustomMessage(String name);
+}
+abstract class AbstractGreeting implements Greeting {
+	public String getStandardMessage(String name) {
+		return "Hi " + name;
+	}
+	public abstract String getCustomMessage(String name);
+}
+class EnglishGreeting extends AbstractGreeting {
+	public String getCustomMessage(String name) {
+		return "Hello " + name;
+	}
+}
+class SpanishGreeting extends AbstractGreeting {
+	public String getCustomMessage(String name) {
+		return "Holla " + name;
+	}
+}
+
+
+
+____________________________________
+
+
+
+
+package q11286;
+
+public class Area {
+
+  public static void main(String args[]) {
+
+    FindArea area = new FindArea();
+
+    area.triangleArea(Double.parseDouble(args[0]), Double.parseDouble(args[1]));
+
+    area.rectangleArea(Double.parseDouble(args[0]), Double.parseDouble(args[1]));
+
+    area.squareArea(Double.parseDouble(args[0]));
+
+    area.circleArea(Double.parseDouble(args[1]));
+
+  }
+
+}
+
+class CalcArea {
+
+  public void triangleArea(double b, double h) {
+
+    System.out.println("Area of triangle : " + (b * h) / 2);
+
+  }
+
+  public void rectangleArea(double l, double b) {
+
+    System.out.println("Area of rectangle : " + l * b);
+
+  }
+
+  public void squareArea(double s) {
+
+    System.out.println("Area of square : " + s * s);
+
+  }
+
+  public void circleArea(double r) {
+
+    System.out.println("Area of circle : " + 3.14 * r * r);
+
+  }
+
+}
+
+class FindArea extends CalcArea {
+
+  public void triangleArea(double b, double h) {
+
+    super.triangleArea(b, h);
+
+  }
+
+  public void rectangleArea(double l, double b) {
+
+    super.rectangleArea(l, b);
+
+  }
+
+  public void squareArea(double s) {
+
+    super.squareArea(s);
+
+  }
+
+  public void circleArea(double r) {
+
+    super.circleArea(r);
+  }
+}
+
+
+
+
+_________________________________________
+
+
+
+
+package q11287;
+
+class Shape {
+
+  public void numberOfSides() {
+
+  }
+
+}
+
+class Trapezoid extends Shape {
+
+  public void numberOfSides() {
+
+    System.out.println("Number of sides in a trapezoid are 4");
+
+  }
+
+}
+
+class Triangle extends Shape {
+
+  public void numberOfSides() {
+
+    System.out.println("Number of sides in a triangle are 3");
+
+  }
+
+}
+
+class Hexagon extends Shape {
+
+  public void numberOfSides() {
+
+    System.out.println("Number of sides in a hexagon are 6");
+
+  }
+
+}
+
+public class AbstractExample {
+
+  public static void main(String[] args) {
+
+    Shape s;
+
+    s = new Trapezoid();
+
+    s.numberOfSides();
+
+    s = new Triangle();
+
+    s.numberOfSides();
+
+    s = new Hexagon();
+
+    s.numberOfSides();
+  }
+}
+
+
+
+____________________________________
+
+
+
+A, E
+
+
+_________________________________
+
+
+
+package q11288;
+public class EnumDemo {
+	public static void main(String[] args) {
+		System.out.println(printDirectionMessage(Direction.EAST));
+		System.out.println(printDirectionMessage(Direction.WEST));
+		System.out.println(printDirectionMessage(Direction.NORTH));
+		System.out.println(printDirectionMessage(Direction.SOUTH));
+	}
+	public static String printDirectionMessage(Direction direction) {
+		switch (direction) {
+			case EAST:
+				return "East stands for Light!";
+			case WEST:
+				return "West stands for Strength!";
+			case NORTH:
+				return "North stands for Silence!";
+			case SOUTH:
+				return "South stands for Love!";
+		}
+		return "Unknown direction. This case will never occur when we use enums.";
+	}
+}
+enum Direction {
+	EAST, WEST, NORTH, SOUTH;
+}
+
+
+
+_____________________________________________
+
+
+
+package q24199;
+public class Test {
+	public static void main(String args[]) {
+		
+	
+		for(Languages sub : Languages.values()){
+						System.out.println(sub);
+		}
+		
+	}
+}
+enum Languages {
+	JAVA,
+	PYTHON,
+	C,
+	CPP,
+	DBMS
+}
+
+
+_________________________________
+
+package q24200;
+public class Test {
+  public static void main(String args[]) {
+
+    Languages sub = Languages.valueOf("JAVA");
+
+    System.out.println(sub);
+
+    Languages sub1 = Languages.valueOf("PYTHON");
+
+    System.out.println(sub1);
+
+    Languages sub2 = Languages.valueOf("C");
+
+    System.out.println(sub2);
+
+    Languages sub3 = Languages.valueOf("CPP");
+
+    System.out.println(sub3);
+    Languages sub4 = Languages.valueOf("DBMS");
+    System.out.println(sub4);
+
+  }
+}
+enum Languages {
+  JAVA,
+  PYTHON,
+  C,
+  CPP,
+  DBMS
+}
+
+
+
+_________________________________________
+
+
+B,C
+
+
+_________________________________________
+
+
+package q24202;
+enum Student {
+  Radha(90),Seetha(62),Ram(50);
+  private int total;  
+  
+       Student(int total) {
+       	    	
+       	    	    	        this.total = total;
+       	    	    	            	        
+       }
+            
+                                
+                                              int display(){
+                                              	            	
+                                              	            	            	        return total;
+                                              	            	            	                    	        
+                                              }
+                                                   
+                                                        
+}
+
+public class Main {
+   public static void main(String args[]){
+      System.out.println("Total Marks: ");
+      
+         
+                Student s = Student.Radha;
+                      
+                                    System.out.println("Radha got "+s.display()+" marks.");
+                                                  
+                                                                        Student s1 = Student.Seetha;
+                                                                                              
+                                                                                                                            System.out.println("Seetha got "+s1.display()+" marks.");
+                                                                                                                                                          
+                                                                                                                                                                                                Student s2 = Student.Ram;
+                                                                                                                                                                                                                                      
+                                                                                                                                                                                                                                                                                    System.out.println("Ram got "+s2.display()+" marks.");
+
+   }
+}
+
+
+____________________________________
+
+

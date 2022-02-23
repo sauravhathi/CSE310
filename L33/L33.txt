@@ -1,0 +1,185 @@
+// L33
+
+
+
+D
+
+____________________________
+
+package q11261;
+public class InheritanceExample {
+	public static void main(String[] args) {
+		B b = new B();
+		System.out.println("Invoking method getAValue() of class A on instance of class B : " + b.getAValue());
+		System.out.println("Invoking method getBValue() on instance of b : " + b.getBValue());
+	}
+}
+class A {
+	public int aValue = 1;
+	public int getAValue() {
+		return aValue;
+	}
+}
+class B extends A {
+	public int bValue = 2;
+	public int getBValue() {
+		return bValue;
+	}
+}
+
+
+_______________________________
+
+
+package q11262;
+public class InheritanceExample {
+	public static void main(String[] args) {
+		A a = new B();
+		System.out.println("a.getAValue() : " + a.getAValue());
+	}
+}
+class A {
+	public int aValue = 1;
+	public int getAValue() {
+		return aValue;
+	}
+}
+class B extends A {
+	public int bValue = 2;
+	public int getBValue() {
+		return bValue;
+	}
+}
+
+
+_____________________________________
+
+
+
+package q11263;
+public class SingleInheritanceDemo{
+		public static void main(String[] args){	
+					int id = Integer.parseInt(args[0]);	
+							float javaMarks = Float.parseFloat(args[1]);
+									float cMarks = Float.parseFloat(args[2]);
+											float cppMarks = Float.parseFloat(args[3]);	
+													float total = javaMarks+cMarks+cppMarks;
+															float avg = total/3;			
+																	Result r = new Result();
+																			r.setMarks(id,javaMarks,cMarks,cppMarks);		
+																					r.displayMarks();	
+																							System.out.println("Total : "+total);
+																									System.out.println("Avg : "+avg);
+																											r.compute();	
+																													r.showResult();	
+		}
+			
+}
+class Marks{
+		int id;	float javaMarks;
+			float cMarks;
+				float cppMarks;	
+					void setMarks(int id, float javaMarks, float cMarks, float cppMarks){
+								this.id = id;	
+										this.javaMarks = javaMarks;	
+												this.cMarks = cMarks;	
+														this.cppMarks = cppMarks;
+					}	
+						void displayMarks(){	
+									System.out.println("Id : "+id);	
+											System.out.println("Java marks : "+javaMarks);	
+													System.out.println("C marks : "+cMarks);	
+															System.out.println("Cpp marks : "+cppMarks);
+						}
+							
+}
+class 
+Result extends Marks{
+	
+				void compute(){	
+					
+				}	
+					void showResult(){	
+							
+					}
+						
+}
+
+
+
+
+_________________________________________
+
+
+
+package q11264;
+public class MultilevelInheritanceDemo {
+		public static void main(String[] args){	
+					int id = Integer.parseInt(args[0]); 
+							String name = args[1];      
+									float jmarks = Float.parseFloat(args[2]); 
+											float cmarks = Float.parseFloat(args[3]);   
+													float cppmarks = Float.parseFloat(args[4]);	
+															Result r1 = new Result();	
+																	r1.setMarks(id,name,jmarks,cmarks,cppmarks);	
+																			r1.displayMarks();	
+																					r1.compute();	
+																							r1.showResult();	
+		}
+			
+}class Student{	
+		int id;
+			String name;
+				float jmarks;
+					float cmarks;
+						float cppmarks;	
+							void setMarks(int id, String name, float jmarks, float cmarks, float cppmarks){	
+										this.id = id;
+												this.name = name;
+														this.jmarks = jmarks;
+																this.cmarks = cmarks;      
+																		this.cppmarks = cppmarks;    
+							}    
+								void displayMarks(){    
+											System.out.println("Id : "+id);  
+													System.out.println("Name : "+name);    
+															System.out.println("Java marks : "+jmarks);    
+																	System.out.println("C marks : "+cmarks);    
+																			System.out.println("Cpp marks : "+cppmarks); 
+								}
+									
+}
+class Marks extends Student{  
+		void setMarks(int id, String name, float jmarks, float cmarks, float cppmarks){   
+					this.id = id;	
+							this.name = name;   
+									this.jmarks = jmarks;    
+											this.cmarks = cmarks;    
+													this.cppmarks = cppmarks;	
+		}  
+			void displayMarks(){    
+						System.out.println("Id : "+id);     
+								System.out.println("Name : "+name);  
+										System.out.println("Java marks : "+jmarks); 
+												System.out.println("C marks : "+cmarks);   
+														System.out.println("Cpp marks : "+cppmarks);   
+			}
+				
+}
+class Result extends Marks{   
+		float total, avg;  
+			void  compute(){	
+						total = jmarks + cmarks + cppmarks;     
+								avg = total / 3;  
+			} 
+				void showResult(){  	
+							System.out.println("Total : "+total);    
+									System.out.println("Avg : "+avg);   
+				}
+
+}
+
+
+
+
+________________________________________________

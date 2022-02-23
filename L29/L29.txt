@@ -1,0 +1,170 @@
+//29
+
+package q11171;
+public class StringMethods {
+	public static void main(String[] args) {
+		String str = "special char &";
+		System.out.println(str.indexOf("char"));
+		System.out.println(str.indexOf(' '));
+		System.out.println(str.lastIndexOf(' '));
+		System.out.println(str.lastIndexOf("a", 8));
+		System.out.println(str.indexOf("sp", 4));
+	}
+}
+
+_________________________
+
+package q11172;
+
+public class StringIndexOf{
+	public static void main(String[] args){
+		System.out.println(args[0].indexOf("CA"));
+	}
+}
+
+________________________
+
+package q11173;
+
+public class StringIndexOf{
+	public static void main(String[] args){
+		System.out.println(args[0].indexOf("CA",2));
+	}
+}
+
+________________________
+
+package q11174;
+
+public class StringLastIndexOf{
+	public static void main(String[] args){
+		System.out.println(args[0].lastIndexOf("*"));
+	}
+}
+
+
+__________________________
+
+package q11175;
+
+public class StringLastIndexOf{
+	public static void main(String[] args){
+		int index = args[0].lastIndexOf("TX");
+		System.out.println(args[0].lastIndexOf("TX",index-1));
+	}
+}
+
+__________________________
+
+package q11176;
+public class SubString {
+	public static void main(String[] args) {
+		String str = "An offer that you cannot refuse";
+		System.out.println(str.substring(9));
+		System.out.println(str.substring(3, 8));
+		System.out.println(str.substring(str.indexOf("you")));
+		System.out.println(str.substring(str.indexOf("that"), str.indexOf("refuse")));
+	}
+}
+
+__________________________
+
+package q11177;
+
+public class SubstringText{
+	public static void main(String[] args){
+		
+		System.out.println(args[0].substring(7));
+	}
+}
+
+__________________________
+
+package q11178;
+
+public class SubstringText{
+	public static void main(String[] args){
+		
+		System.out.println(args[0].substring(5,13));
+	}
+}
+
+_________________________
+
+package q11179;
+public class StringMethods {
+	public static void main(String[] args) {
+		String str = " Six seasons   ";
+		System.out.println("length = " + str.length());
+		System.out.println("length after trim = " + str.trim().length());
+		System.out.println(str.replace(' ', '*'));
+		System.out.println(str.trim().replace("Six", "Four"));
+	}
+}
+
+_______________________
+
+package q11180;
+public class StringTrim {	
+	public static void main(String[] args) {		
+	
+		System.out.println(args[0].trim());
+	}
+}
+
+________________________
+
+package q11181;
+
+public class StringReplace {	
+	public static void main(String[] args) {		
+		System.out.println(args[0].replace('c', 'k'));		
+	}
+	
+}
+
+______________________
+
+package q11182;
+public class StringMethods {
+	public static void main(String[] args) {
+		String str = "http://docs.oracle.com/javase/7/docs/api/";
+		String[] splits = str.split("/");
+		for (String s : splits) {
+			System.out.println(s);
+		}
+	}
+}
+
+______________________
+
+package q11183;
+
+public class StringSplit {
+	public static void main(String[] args) {
+		String[] splits = args[0].split(args[1]);	
+		for (String s : splits) {	
+			System.out.println(s.trim());	
+		}
+	
+	
+	}
+	
+}
+
+_______________________
+
+package q11184;
+public class PalindromeOrNot {
+	   public static void main (String[] args) {
+	   	      String str = args[0];
+	   	      String reverse = new StringBuffer(str).reverse().toString();
+	   	       if (str.equals(reverse)){
+	   	                System.out.println("The given string "+str+" is a palindrome");
+	   	                      }else{
+	   	                           System.out.println("The given string "+str+" is not a palindrome");
+	   	                              }
+	   }
+}
+
+______________________

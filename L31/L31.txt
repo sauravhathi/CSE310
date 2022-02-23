@@ -1,0 +1,386 @@
+//L31
+
+package q11191;
+
+public class Greeting{
+	public static void main(String[] args){
+		System.out.println("Hello "+args[0]+"!");
+	}
+}
+
+______________________
+
+package q11192;
+
+public class PrefixCheck{
+public static void main(String[] args){
+if(args[0].startsWith("en")){
+System.out.println(args[0]);
+} else{
+System.out.println("en"+args[0]);
+}
+}
+}
+
+
+______________________
+
+package q11193;
+public class ExpandAString {
+	public static void main(String[] args){
+    int  a = Integer.parseInt(args[1]);
+		System.out.println(args[0].repeat(a));
+}
+}
+
+
+____________________
+
+
+package q11194;
+
+public class TestSubstring{
+	public static void main(String[] args){
+		
+		System.out.println(args[0].substring(0,3));
+	}
+}
+
+_____________________
+
+package q11195;
+public class TestSubstring {
+	
+	public static void main(String[] args){
+		
+		int size = (args[0].length());
+		System.out.println(args[0].substring(0,size/2));
+	}
+	
+}
+
+____________________
+
+package q11196;
+
+public class TestSubstring{
+	public static void main(String[] args){
+		
+		System.out.println(args[0].substring(1,args[0].length()-1));
+	}
+}
+
+
+______________________
+
+
+package q11197;
+
+public class StringStairs{
+	public static void main(String[] args){
+		
+		for(int i = 1; i < args[0].length()+1; i++){
+			System.out.println(args[0].substring(0,i));
+		}
+	}
+}
+
+_____________________
+
+package q11198;
+
+public class RemoveChar{
+	public static void main(String[] args){
+		int size = args[0].length();
+		System.out.println(args[0].substring(0,2)+args[0].substring(3,size));
+	}
+}
+
+____________________
+
+
+package q11199;
+
+public class ExtractTag{
+	public static void main(String[] args){
+		
+		System.out.println(args[0].replace("[","").replace("]",""));
+	}
+}
+
+
+___________________
+
+package q11200;
+
+public class AttachTag{
+	public static void main(String[] args){
+		String s1 = "["+args[1]+"]";
+		String s2 = "[/"+args[1]+"]";
+		String a = s1+args[0]+s2;
+		System.out.println(a);
+	}
+}
+
+__________________
+
+package q11201;
+
+public class PutInsideTag{
+	public static void main(String[] args){
+		
+		int mid = args[0].length()/2;
+		
+		String s1 = args[0].substring(0,mid);
+		String s2 = args[0].substring(mid,args[0].length());
+		
+		    System.out.println(s1+args[1]+s2);
+	}
+}
+
+________________
+
+package q11202;
+
+public class ReverseString{
+	public static void main(String[] args){
+		
+		for(int i = 0; i < args[0].length(); i++){
+			
+			System.out.print(args[0].charAt(args[0].length()-1-i));
+		}
+		System.out.println("\n");
+	}
+}
+
+________________
+
+package q11203;
+public class MiddleTwoChars {
+	
+	public static void main(String[] args){
+		
+		String result = args[0].substring(args[0].length()/2-1, args[0].length()/2+1);
+		
+		System.out.println(result);
+	}
+	
+}
+
+_______________
+
+package q11204;
+
+public class EndsWith{
+	public static void main(String[] args){
+		
+		boolean ends = args[0].endsWith("bad");
+		
+		if(ends){
+			System.out.println(ends);
+		} else{
+			System.out.println(ends);
+		}
+	}
+}
+
+___________________
+
+package q11205;
+public class EndsWith {
+	public static void main(String[] args){
+		
+
+		boolean ends = args[0].toLowerCase().endsWith(args[1].toLowerCase());
+		
+		System.out.println(ends ? ends : ends);
+	}
+}
+
+_________________
+
+package q11206;
+
+public class TestString{
+	public static void main(String[] args){
+		String input = args[0];
+		int size = input.length();
+		
+		System.out.println(input.substring(0,3)+input.substring(size-3, size));
+	}
+}
+
+
+________________
+
+package q11207;
+
+public class TestString{
+	public static void main(String[] args){
+		String input = args[0];
+		int size = input.length();
+		String first = input.substring(0,1);
+		
+		System.out.println(input.substring(1,size)+first+"aa");
+	}
+}
+
+________________
+
+package q11208;
+
+public class MiddleChar{
+	public static void main(String[] args){
+		
+		String input = args[0];
+		if(input.length()%2==0){
+			System.out.println(input.charAt(input.length()/2-1));
+		} else{
+			System.out.println(input.charAt(input.length()/2));
+		}
+	}
+}
+
+________________
+
+package q11209;
+
+public class CheckChars{
+	public static void main(String[] args){
+		
+		String input = args[0];
+		
+		System.out.println(input.contains("w") && input.contains("e") && input.contains("b"));
+	}
+}
+
+________________
+
+package q11210;
+public class AppendChars {
+	public static void main(String[] args){
+		
+		String input = args[0];
+		
+		if(input.length() < 10){
+			 for(int i = input.length(); i < 10; i++){
+			 	input += "*";
+			 }
+			 System.out.println(input);
+			 }
+			 else{
+			 	System.out.println(input);
+			 }
+	}
+	
+}
+
+________________
+
+package q11211;
+
+public class RemoveChars{
+	public static void main(String[] args){
+		
+		System.out.println(args[0].replace("x",""));
+	}
+}
+
+_________________
+
+package q11212;
+public class RemoveSuffix {
+	public static void main(String[] args){
+		String input = args[0];
+		int size = input.length();
+		
+		if(input.substring(0,3).equals(input.substring(size-3, size))){
+			System.out.println(input.substring(0,size-3));
+		} else{
+			System.out.println(input);
+		}
+	}
+}
+
+______________
+
+package q11213;
+public class RemovePrefix {
+	
+	public static void main(String[] args){
+		
+		StringBuffer a = new StringBuffer(args[0]);
+		
+		   if((a.charAt(0) == 'x') == true && (a.charAt(1) == 'y') == true){
+		   	System.out.println(a);
+		   	
+		   } else if(a.charAt(0) != 'y' && a.charAt(1) != 'y' && a.charAt(0) != 'x' && a.charAt(1) != 'x'){
+		   	System.out.println(a.delete(0,2));
+		   	
+		   } else if((a.charAt(0) == 'y') == true && (a.charAt(1) == 'x') == true){
+		   	System.out.println(a);
+		   	
+		   } else if((a.charAt(0) == 'y') == true && a.charAt(1) != 'x'){
+		   	System.out.println(a.delete(1,2));
+		   	
+		   } else if((a.charAt(0) == 'x') == true && a.charAt(1) != 'y'){
+		   	System.out.println(a.delete(1,2));
+		   	
+		   } else if(a.charAt(0) != 'y' && a.charAt(0) != 'x'){
+		   	System.out.println(a.delete(0,1));
+		   	
+		   } else if(a.charAt(1) != 'y' && a.charAt(1) != 'x'){
+		   	System.out.println(a.delete(1,2));
+		   	
+		   }
+		
+	}
+	
+}
+
+
+________________
+
+package q11214;
+
+public class CountChars{
+	public static void main(String[] args){
+		
+		String input = args[0];
+		int count = 0;
+		
+		for(int i = 0; i < input.length(); i++){
+			if(input.charAt(i) == 'o'){
+				count++;
+			}
+		}
+		
+		System.out.println(count);
+	}
+}
+
+______________
+
+package q11215;
+
+public class JavaStringBufferDelete{
+	public static void main(String[] args){
+		
+		StringBuffer buf = new StringBuffer("Hello India");
+
+		System.out.println(buf.delete(0,6)+"\n");
+		
+		buf = new StringBuffer("Hello Java");
+		
+		System.out.println(buf.delete(0,1));
+		
+	}
+}
+
+_______________
+
+D
+
+______________
+
+

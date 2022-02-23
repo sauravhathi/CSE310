@@ -1,0 +1,168 @@
+// L19
+// Saurav Haathi
+// YT
+
+
+
+
+package q10936;
+public class RiverNamePrinter {
+	public static void main(String[] args) {
+		String[] namesArr = { "Ganga", "Yamuna", "Godavari", "Krishna", "Narmada", "Kaveri" };
+		for (String river : namesArr) {
+			System.out.println(river);
+		}
+	}
+}
+
+
+____________________________________
+
+
+package q10937;
+
+public class MountainNamePrinter{
+	public static void main(String[] args){
+		String[] mountainNames = {"Nanda Devi", "Kamet", "K12", "Dunagiri"};
+		
+		for(String mountain : mountainNames){
+			System.out.println(mountain);
+		}
+	}
+}
+
+____________________________________
+
+
+package q10938;
+public class RiverNameFinder {
+	public void findElement(int index) {
+		String[] namesArr = { "Ganga", "Yamuna", "Godavari", "Krishna", "Narmada", "Kaveri" };
+		if (index >= 0 && index < namesArr.length) {
+			System.out.println(namesArr[index]);
+		}
+	}
+}
+
+
+_________________________________
+
+
+package q10939;
+public class CityNameFinder {
+	
+	public void findElement(int index) {
+
+		String[] findElement = {"Mumbai", "Delhi", "Kolkata", "Chennai", "Hyderabad", "Bangalore"};
+		
+		if(index >= 0 && index<findElement.length){
+			System.out.println(findElement[index]);
+		} else {
+			System.out.println("Wrong Index");
+		}
+		
+	}
+}
+
+
+
+____________________________________
+
+
+package q10940;
+public class IndexFinder {
+	public void printIndex(int[] intArr, int element) {
+		for (int i = 0; i < intArr.length; i++) {
+			if (intArr[i] == element) {
+				System.out.println(i);
+			}
+		}
+	}
+}
+
+
+________________________________________
+
+
+package q10941;
+
+public class IndexFinder {
+	
+	public int printIndex(int[] intArr, int element) {
+
+		for(int i = 0; i < intArr.length; i++){
+			if(intArr[i] == element){
+				return i;
+			}
+		}
+		return 1;
+	}
+}
+
+
+___________________________________
+
+
+package q10942;
+public class ArrayElementCounter {
+	public int countElement(int[] arr, int element) {
+		int count = 0;
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] == element) {
+				count++;
+			}
+		}
+		return count;
+	}
+}
+
+
+__________________________________
+
+
+package q10943;
+
+public class ArrayElementCounter {
+	 
+	public int countElement(int[] arr, int element) {
+
+		int count=0;
+		
+		for(int i = 0; i<arr.length; i++){
+			if(arr[i] == element){
+				count++;
+			}
+		}
+		
+		return count;
+		
+	}
+}
+
+
+
+________________________________________
+
+
+package q10944;
+
+public class ArrayReverser {
+
+	public int[] reverseArray(int[] arr) {
+
+		int[] a = new int[arr.length];
+		
+		int j=arr.length;
+		
+		for(int i = 0; i<arr.length; i++){
+			
+			a[j-1] = arr[i];
+			j--;
+		    }
+		    
+		    return a;
+		}
+}
+
+
+_____________________________________________

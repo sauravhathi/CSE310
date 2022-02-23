@@ -1,0 +1,193 @@
+// L81
+
+
+
+package q10935;
+public class ArrayDemo {
+	public static void main(String[] args) {
+		int[] ramanujanNumbers = { 1729, 4104, 13832, 20683, 32832 };
+		System.out.println("Printing Ramanujan Numbers: ");
+		for (int i = 0; i < ramanujanNumbers.length; i++) {
+			System.out.println(ramanujanNumbers[i]);
+		}
+	}
+}
+
+
+___________________________________________
+
+
+
+package q10946;
+public class MultiDimArrayPrinter {
+	public static void main(String[] args) {
+		int[][] int2DArr = {
+							{1},
+							{2, 3},
+							{4, 5, 6},
+							{7, 8, 9, 10}
+						};
+		for (int[] arr : int2DArr) {
+			for (int value : arr) {
+				System.out.print(value + " ");
+			}
+			System.out.println();
+		}
+	}
+}
+
+
+
+______________________________________
+
+
+
+package q10946;
+public class MultiDimArrayPrinter {
+	public static void main(String[] args) {
+		int[][] int2DArr = {
+							{1},
+							{2, 3},
+							{4, 5, 6},
+							{7, 8, 9, 10}
+						};
+		for (int[] arr : int2DArr) {
+			for (int value : arr) {
+				System.out.print(value + " ");
+			}
+			System.out.println();
+		}
+	}
+}
+
+
+______________________________________
+
+
+
+package q10947;
+public class MultiDimArrayPrinter {
+	public static void main(String[] args) {
+		int[][] int2DArr = {
+							{1},
+							{2, 3},
+							{4, 5, 6},
+							{7, 8, 9, 10}
+						};
+		for (int i = 0; i < int2DArr.length; i++) {
+			for (int j = 0; j < int2DArr[i].length; j++) {
+				System.out.print(int2DArr[i][j] + " ");
+			}
+			System.out.println();
+		}
+	}
+}
+
+
+
+_______________________________________
+
+
+package q11053;
+public class AdditionOfMatrix {
+
+	public int[][] add(int[][] matrix1, int[][] matrix2) {
+	
+		int row=matrix1.length;
+		int col=matrix1[0].length;
+		
+		int size=row*col;
+		
+		int row1=matrix2.length;
+		int col1=matrix2[0].length;
+		
+		int size1=row1*col1;
+
+		
+		int sum[][] = new int[row][col];
+		
+			for(int i = 0; i<row; i++){
+			    for(int j = 0; j<col; j++){
+			    	
+			    	if(size==size1){
+			    		
+			    	sum[i][j] = matrix1[i][j]+matrix2[i][j];
+			    		
+			    	} else{
+			    		return null;
+			    	}
+			   }
+		}
+
+		return sum;
+
+	}
+}
+
+
+___________________________________________
+
+
+package q11105;
+public class TransposeMatrix {
+	
+public int[][] transposeMatrix(int[][] matrix1) {
+
+		int row = matrix1.length;
+		
+		int col = matrix1[0].length;
+		
+		int tranMatrix[][] = new int[col][row];
+		
+		for(int i = 0; i<row; i++){
+			
+			for (int j = 0; j<col; j++){
+				
+				tranMatrix[j][i] = matrix1[i][j];
+			}
+		}
+		return tranMatrix;
+		
+	}
+}
+
+
+___________________________________________
+
+
+
+package q11106;
+public class MultiplicationOfMatrix{
+	public int[][] multiplication(int[][] matrix1, int[][] matrix2) {
+		
+		int row=matrix1.length, col=matrix1[0].length;
+		
+		int row1=matrix2.length, col1=matrix2[0].length;
+		
+		int multi[][] = new int[row][col1];
+		
+		for(int i = 0; i<row; i++){
+			
+			for(int j = 0; j<col1; j++){
+				
+				for(int k = 0; k<row1; k++){
+				
+				if(row1 == col){
+					
+					multi[i][j] += matrix1[i][k] * matrix2[k][j];
+					
+				} else {
+					
+					return null;
+				   }
+				}
+			}
+		}
+		return multi;
+	}
+}
+
+
+
+
+_____________________________________
