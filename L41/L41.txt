@@ -1,0 +1,100 @@
+// L41
+// Saurav Hathi
+
+
+
+package q11296;
+public class A {
+	private int value = 7;
+	class B {
+		private B() {
+			System.out.println("In inner class B's constructor");
+		}
+	}
+	static class C {
+		private C() {
+			System.out.println("In static nested class C's constructor");
+		}
+	}
+	public void someMethodInClassA() {
+		class D {
+			private D() {
+				System.out.println("In local class D's constructor");
+				System.out.println("value = " + value);
+			}
+		}
+		D d = new D();
+	}
+	public static void main(String[] args) {
+		A a = new A();
+		A.B b = new A().new B();
+		A.C c = new A.C();
+		a.someMethodInClassA();
+	}
+}
+
+
+_________________________________________________
+
+
+package q11297;
+interface Printer {
+	public void printMe();
+}
+class A {
+	public static void main(String[] args) {
+		class PrinterImpl implements Printer {
+			public void printMe() {
+				System.out.println("I am in printMe method of the local class PrinterImpl instance");
+			}
+		}
+		Printer myPrinter1 = new PrinterImpl();
+		Printer myPrinter2 = new Printer() {
+			public void printMe() {
+				System.out.println("I am in printMe method of the anonymous class");
+			}
+		};
+		myPrinter1.printMe();
+		myPrinter2.printMe();
+	}
+}
+
+
+_________________________________________
+
+package q11298;
+interface Printer {
+	public void printMe();
+}
+class Prefixer {
+	protected String prefix;
+	public Prefixer(String prefix) {
+		this.prefix = prefix;
+	}
+	public String getPrefixedName(String name) {
+		return prefix + " " + name;
+	}
+}
+class AnonymousExample {
+	public static void main(String[] args) {
+		Printer printer = new Printer() {
+			public void printMe() {
+				System.out.println("printMe is called!");
+			}
+		};
+		Prefixer doublePrefixer = new Prefixer("Hello") {
+			public String getPrefixedName(String name) {
+				return prefix + " " + prefix + " " + name;
+			}
+		};
+		printer.printMe();
+		System.out.println(doublePrefixer.getPrefixedName("James"));
+	}
+}
+
+
+________________________________________________
+
+A
+
+_______

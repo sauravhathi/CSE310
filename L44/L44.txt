@@ -1,0 +1,170 @@
+// L44
+// Saurav Hathi
+
+
+B
+
+_____________________
+
+B
+
+____________________
+
+package q11307;
+public class StringBuilderDemo {
+	public static void main(String[] args) {
+		StringBuilder sb = new StringBuilder("Ganga");
+		sb.append("River");
+		System.out.println("sb = " + sb);
+		sb.append("Nile");
+		System.out.println("sb = " + sb);
+		sb.append("River").append("Thames");
+		System.out.println("sb = " + sb);
+		sb.delete(0, 5);
+		System.out.println("sb = " + sb);
+	}
+}
+
+_____________________
+
+A,B
+
+___________________
+
+B,C
+
+________________
+
+A
+
+_______________
+
+B
+_______________
+
+
+package q24212;
+
+public class Example {
+	
+	
+	
+	    public static void main(String[] args) {
+	    	
+	    	        String s = args[0];
+	    	        
+	    	                StringBuilder sb = new StringBuilder();
+	    	                
+	    	                        for (int i = 0; i < s.length(); i++) {
+
+	                char c = s.charAt(i);
+	                
+	                            if (Character.isUpperCase(c)) {
+
+                sb.append(c);
+                
+	    }
+	    
+}
+
+        System.out.println("The result is: "+sb.toString());
+        
+            }
+            
+            }
+
+
+__________________________________
+
+
+package q24216;
+public class StringBuilderDemo
+{
+  public static void main (String args[])
+  {
+    String s = new String ("AB");
+      System.out.print ("In Strings before concatenation Hash Code is: ");
+      System.out.println (s.hashCode ());
+      s += "C";
+
+    StringBuilder sb = new StringBuilder ("AB");
+      System.out.println ("In Strings after concatenation Hash Code is: ");
+
+      System.out.
+      print ("In StringBuilder before concatenation Hash Code is: ");
+
+      System.out.println (sb.hashCode ());
+
+      sb.append ("C");
+
+      System.out.
+      print ("In StringBuilder after concatenation Hash Code is: ");
+
+      System.out.println (sb.hashCode ());
+
+  }
+}
+
+
+_________________________________
+
+
+C
+
+___________
+
+B
+___________
+
+B
+________________________
+
+package q11308;
+public class ConcatenationDemo {
+	public static void main(String[] args) {
+		String[] wordsArr = {"I", "AM", "THAT", "I AM"};
+		StringBuilder sb = new StringBuilder();
+		for (String word : wordsArr) {
+			sb.append(word).append(" ");
+		}
+		String theRealMe = sb.toString();
+		System.out.println("theRealMe = " + theRealMe);
+	}
+}
+
+________________________________
+
+A,B
+
+________________________
+
+
+package q24215;
+public class StringbufferExample
+{
+  public static void main (String args[])
+  {
+
+
+    StringBuffer sb = new StringBuffer ();
+
+      System.out.println ("Initial capacity is: " + sb.capacity ());
+
+      sb = new StringBuffer (args[0]);
+
+      System.out.println ("Capacity after passing parameter is: " +
+			  sb.capacity ());
+
+      sb = new StringBuffer (50);
+
+      System.out.
+      println ("Creating a StringBuffer object with the given capacity: " +
+	       sb.capacity ());
+  }
+}
+
+
+____________________________
+
+
+
