@@ -1,0 +1,335 @@
+// L49
+// Saurav Hathi
+// https://www.youtube.com/c/SauravHathi
+
+
+
+package q11333;
+public class ThrowAndThrowsExample {
+	public static void main(String[] args) {
+		Student st1 = null;
+		Student st2 = null;
+		try {
+			st1 = new Student("Ganga", 25);
+			System.out.println("Successfully created st1.");
+			System.out.println("st1 : " + st1);
+		} catch (InvalidAgeException e) {
+			System.out.println("Could not create st1. Error message is : " + e.getMessage());
+		}
+		try {
+			st2 = new Student("Yamuna", 1003);
+			System.out.println("Successfully created st2.");
+			System.out.println("st2 : " + st2);
+		} catch (InvalidAgeException e) {
+			System.out.println("Could not create st2. Error message is : " + e.getMessage());
+		}
+	}
+}
+class Student {
+	private String name;
+	private int age;
+	public Student(String name, int age) throws InvalidAgeException {
+		this.name = name;
+		setAge(age);
+	}
+	public void setAge(int age) throws InvalidAgeException {
+		if (age < 0 || age > 999) {
+			throw new InvalidAgeException("Invalid age : " + age + ". Valid range for age is between 0 and 999.");
+		}
+		this.age = age;
+	}
+	public String toString() {
+		return "name = " + name + ", age = " + age;
+	}
+}
+class InvalidAgeException extends Exception {
+	public InvalidAgeException(String errorMessage) {
+		super(errorMessage);
+	}
+}
+
+
+_______________________________________________
+
+
+package q11335;
+
+public class ThrowExample {
+	
+		public static void main(String args[]) {
+			
+			int age = Integer.parseInt(args[0]);
+			int weight = Integer.parseInt(args[1]);
+			
+					System.out.println("Welcome to the Registration process!!");
+					
+							try {
+								
+								            checkEligibilty(age,weight);
+								            
+								                        System.out.println("Have a nice day");
+								                        
+							} catch (ArithmeticException e) {
+								
+								            System.out.println(e);
+								            
+							}
+							
+		}
+		
+			static void checkEligibilty(int age, int weight) {
+				
+						if(age < 12 && weight < 40) { // Write the condition
+						
+									 // Fill the missing code
+									 
+									              throw(new ArithmeticException("Student is not eligible for registration"));
+									              
+						} else {
+							
+										System.out.println("Student Entry is Valid!!");
+										
+						}
+						
+			}
+			
+}
+
+
+
+________________________________________________________
+
+
+package q11336;
+public class CustomExceptionExample {
+	public static void main(String[] args) {
+		Student st1 = null;
+		Student st2 = null;
+		Student st3 = null;
+		try {
+			st1 = new Student("Ganga", 25);
+			System.out.println("Successfully created st1.");
+			System.out.println("st1 : " + st1);
+		} catch (InvalidNameException | InvalidAgeException e) {
+			System.out.println("Could not create st1. Error message is : " + e.getMessage());
+		}
+		try {
+			st2 = new Student("Yamuna", 1003);
+			System.out.println("Successfully created st2.");
+			System.out.println("st2 : " + st2);
+		} catch (InvalidNameException | InvalidAgeException e) {
+			System.out.println("Could not create st2. Error message is : " + e.getMessage());
+		}
+		try {
+			st3 = new Student("Na", 1004);
+			System.out.println("Successfully created st3.");
+			System.out.println("st3 : " + st3);
+		} catch (InvalidNameException | InvalidAgeException e) {
+			System.out.println("Could not create st3. Error message is : " + e.getMessage());
+		}
+	}
+}
+class Student {
+	private String name;
+	private int age;
+	public Student(String name, int age) throws InvalidNameException, InvalidAgeException {
+		setName(name);
+		setAge(age);
+	}
+	public void setName(String name) throws InvalidNameException {
+		if (name == null || name.length() < 3 || name.length() > 100) {
+			throw new InvalidNameException("Invalid name : " + name + ". Name has to be a non-null value whose length is between 3 and 100 characters.");
+		}
+		this.name = name;
+	}
+	public void setAge(int age) throws InvalidAgeException {
+		if (age < 0 || age > 999) {
+			throw new InvalidAgeException("Invalid age : " + age + ". Valid range for age is between 0 and 999.");
+		}
+		this.age = age;
+	}
+	public String toString() {
+		return "name = " + name + ", age = " + age;
+	}
+}
+class InvalidNameException extends Exception {
+	public InvalidNameException(String errorMessage) {
+		super(errorMessage);
+	}
+}
+class InvalidAgeException extends Exception {
+	public InvalidAgeException(String errorMessage) {
+		super(errorMessage);
+	}
+}
+
+
+____________________________________________________________
+
+
+package q11337;
+public class BankDemo {
+	
+		public static void main(String [] args) {
+			
+					CheckingAccount c = new CheckingAccount(1001);
+					
+							System.out.println("Depositing $1000...");
+							
+									c.deposit(1000.00);
+									
+											try {
+												
+															System.out.println("Withdrawing $700...");
+															
+																		c.withdraw(700.00);
+																		
+																					System.out.println("Withdrawing $600...");
+																					
+																								c.withdraw(600.00);
+																								
+											}
+											
+													catch (InsufficientFundsException e) {
+														
+																	System.out.println("Sorry, short of $" + e.getAmount() + " in the account number " + c.getNumber());
+																	
+													}
+													
+		}
+		
+}
+
+class InsufficientFundsException extends Exception {
+	
+		private double amount;
+		
+			public InsufficientFundsException(double amount) {
+				
+				        this.amount = amount;
+				        
+				                
+				                
+				                		// initialize
+				                		
+			}
+			
+				public double getAmount() {
+					
+					        return amount;
+					        
+					        		// return
+					        		
+				}
+				
+}
+
+class CheckingAccount {
+	
+		private double balance;
+		
+			private int accountNumber;
+			
+				public CheckingAccount(int number) {
+					
+					        accountNumber = number;
+					        
+					        		// initialize
+					        		
+				}
+				
+					public void deposit(double amount) {
+						
+						        balance += amount;
+						        
+						        		// add amount to balance
+						        		
+					}
+					
+						public void withdraw(double amount) throws InsufficientFundsException {
+							
+									if(amount > balance) {
+										
+										            throw new InsufficientFundsException(amount - balance);
+										            
+									} 
+									else{
+										balance -= amount;
+									}
+									
+						}
+						
+							public double getBalance() {
+								
+								        return balance;
+								        
+								        		// return
+								        		
+							}
+							
+								public int getNumber() {
+									
+									        return accountNumber;
+									        
+									        		// return
+									        		
+								}
+								
+}
+
+
+
+_____________________________________________________________
+
+
+package q11338;
+
+public class MyException {
+	
+		public static void main (String[] args) {
+			
+					try {
+						
+									int x = Integer.parseInt(args[0]);
+									
+												if (x >= 25 && x <= 50) {
+													
+													                System.out.println("Given number : " + x);
+													                
+												} else {
+													
+													                throw new NumberRangeException();
+													                
+												}
+												
+					} catch (NumberFormatException e) {
+						
+						            System.out.println("Please enter a number");
+						            
+					} catch (NumberRangeException e) {
+						
+						            System.out.println(e);
+						            
+					}
+					
+		}
+		
+}
+
+class NumberRangeException extends Exception {
+	
+	    public NumberRangeException() {
+	    	
+	    	        System.out.println("Please enter a number between 25 and 50");
+	    	        
+	    }
+	    
+	    
+	    
+	    	
+	    	
+}
+
+
+
+______________________________________________________________
