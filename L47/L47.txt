@@ -1,0 +1,127 @@
+// L46
+// Saurav Hathi
+// https://www.youtube.com/c/SauravHathi
+
+
+
+package q11317;
+public class ExceptionDemo1 {
+	public static void main(String[] args) {
+		int number = 34;
+		int divisor = 2;
+		int result = number / divisor;
+		System.out.println("result = " + result);
+	}
+}
+
+
+______________________________________________________
+
+
+package q11318;
+public class ExceptionDemo2 {
+	public static void main(String[] args) {
+		int number1 = 34;
+		int number2 = 2;
+		int result = divide(number1, number2);
+		System.out.println("result = " + result);
+	}
+	public static int divide(int number, int divisor) {
+		return number / divisor;
+	}
+}
+
+
+_________________________________________________________
+
+
+package q11319;
+public class ExceptionDemo3 {
+	public static void main(String[] args) {
+		String text1 = "3";
+		String text2 = "4";
+		int result = convertAndAdd(text1, text2);
+		System.out.println("result = " + result);
+	}
+	public static int convertAndAdd(String number1Text, String number2Text) {
+		int number1 = Integer.parseInt(number1Text);
+		int number2 = Integer.parseInt(number2Text);
+		return number1 + number2;
+	}
+}
+
+
+_________________________________________________________
+
+
+package q11320;
+public class ExceptionDemo4 {
+	public static void main(String ... args) {
+		System.out.println(args[3]);
+	}
+}
+
+
+_______________________________________________________
+
+
+C,D,E
+
+______________________________________________________
+
+
+package q11322;
+public class TryCatchDemo {
+	public static void main(String[] args) {
+		System.out.println("Before sleep...");
+		try{
+		Thread.sleep(2000);
+		}
+		catch(InterruptedException e){
+		}
+			
+		System.out.println("After sleep...");
+	}
+}
+
+
+_____________________________________________________
+
+
+package q11323;
+public class TryCatchDemo2 {
+	public static void main(String[] args) {
+		String text1 = "33";
+		String text2 = "44a";
+		System.out.println("before parsing text1");
+		int value1 = Integer.parseInt(text1);
+		System.out.println("value1 = " + value1);
+		try {
+			int value2 = Integer.parseInt(text2);
+			System.out.println("value2 = " + value2);
+		} catch (NumberFormatException e) {
+			System.out.println("could not parse text2 = " + text2);
+		}
+	}
+}
+
+
+__________________________________________________________
+
+
+package q11324;
+public class StackOverflowErrorDemo {
+	public static void main(String ... args) {
+		someMethod();
+	}
+	public static void someMethod() {
+		try {
+		someMethod();
+		}catch(StackOverflowError ste) {
+			System.out.println("Stack over flow occured");
+		}
+	}
+}
+
+
+____________________________________________________________
