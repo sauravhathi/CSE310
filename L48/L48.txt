@@ -1,0 +1,181 @@
+// L46
+// Saurav Hathi
+// https://www.youtube.com/c/SauravHathi
+
+
+package q11325;
+public class TryCatchDemo2 {
+	public static void main(String[] args) {
+		String text1 = "3g";
+		int value1 = 0;
+		try {
+			value1 = Integer.parseInt(text1);
+			System.out.println("Successfully parsed text1 as integer");
+		} catch (NumberFormatException e) {
+			System.out.println("Unable to parse text1 as integer");
+		} finally {
+			System.out.println("Inside finally block");
+		}
+	}
+}
+
+
+___________________________________________________
+
+
+D,E
+
+__________________________________________________
+
+
+package q11327;
+public class TryCatchDemo3 {
+	public static void main(String[] args) {
+		String text1 = "3";
+		int value1 = 0;
+		try {
+			value1 = Integer.parseInt(text1);
+			System.out.println("Successfully parsed text1 as integer");
+		} catch (NumberFormatException e) {
+			System.out.println("Unable to parse text1 as integer");
+		} finally {
+			System.out.println("Inside finally block 1");
+		}
+		String text2 = "4g";
+		int value2 = 0;
+		try {
+			value2 = Integer.parseInt(text2);
+			System.out.println("Successfully parsed text2 as integer");
+		} catch (NumberFormatException e) {
+			System.out.println("Unable to parse text2 as integer");
+		} finally {
+			System.out.println("Inside finally block 2");
+		}
+	}
+}
+
+
+________________________________________________
+
+
+D
+
+_______________________________________________
+
+
+package q11329;
+
+public class Division {
+	
+	    public static void main(String[] args) {
+	    	
+	    	        int a = Integer.parseInt(args[0]);
+	    	        
+	    	                int b = Integer.parseInt(args[1]);
+	    	                
+	    	                        try {
+	    
+	                int result = a / b;
+	                
+	                            System.out.println("Result = " + result);
+	                            
+	    } catch (ArithmeticException e) {
+	    	
+	    	            System.out.println("Exception caught : divide by zero occurred");
+	    	            
+	    }
+	    
+}
+
+}
+
+
+________________________________________________
+
+
+package q11330;
+public class MyFinallyBlock {
+	
+	    public static void main(String[] args) {
+	    	
+	    	        int a = Integer.parseInt(args[0]);
+	    	        
+	    	                int b = Integer.parseInt(args[1]);
+	    	                
+	    	                        try {
+	                int result = a / b;
+	                
+	                            System.out.println("Result of integer values division : " + result);
+	                            
+	    } catch (ArithmeticException e) {
+	    	
+	    	            System.out.println("Inside the 1st catch block");
+	    	            
+	    } finally {
+	    	
+	    	            System.out.println("Inside the 1st finally block");
+	    	            
+	    }
+	    
+	    
+	    
+	            float c = Float.parseFloat(args[2]);
+	            
+	                    float d = Float.parseFloat(args[3]);
+	                    
+	                            try {
+	                float result = c / d;
+	                
+	                            System.out.println("Result of float values division : " + result);
+	                            
+} catch (ArithmeticException e) {
+	
+	            System.out.println("Inside the 2nd catch block");
+	            
+} finally {
+	
+	            System.out.println("Inside the 2nd finally block");
+	            
+}
+
+    }
+    
+    }
+
+
+____________________________________________________________
+
+
+package q11331;
+
+public class MultiCatchBlocks {
+	
+	   void multiCatch(int[] arr, int index) {
+	    	                
+	    	                        try {
+	                System.out.println(arr[index]);
+	                
+	                            System.out.println(arr[index] / index);
+	                            
+	    } catch (ArithmeticException e) {
+	    	
+	    	            System.out.println("Division by zero exception occurred");
+	    	            
+	    } catch (ArrayIndexOutOfBoundsException e) {
+	    	
+	    	            System.out.println("Array index out of bounds exception occurred");
+	    	            
+	    } catch (Exception e) {
+	    	
+	    	            System.out.println("Exception occurred");
+	    	            
+	    }
+	    
+}
+
+}
+
+
+_____________________________________________________________
+
+
