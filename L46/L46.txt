@@ -1,0 +1,212 @@
+// L46
+// Saurav Hathi
+// https://www.youtube.com/c/SauravHathi
+
+
+package q11313;
+import java.util.*;
+public class ArraysDemo {
+	public static void main(String ... args) {
+		List<Integer> integerList = Arrays.asList(3, 33, 333, 3333);
+		System.out.println("integerList : " + integerList);
+		Integer[] integerArr = {382, 34, 4, 223, 331};
+		System.out.println("Original integerArr : " + Arrays.asList(integerArr));
+		Arrays.sort(integerArr);
+		System.out.println("After sorting integerArr : " + Arrays.asList(integerArr));
+		Integer[] integerArr2 = {4, 34, 223, 331, 382};
+		System.out.println("Arrays.equals(integerArr, integerArr2) : " + Arrays.equals(integerArr, integerArr2));
+		Integer[] integerArr3 = new Integer[10];
+		Arrays.fill(integerArr3, 7);
+		System.out.println("After filling integerArr3 with 7 : " + Arrays.asList(integerArr3));
+	}
+}
+
+
+_________________________________________________
+
+
+package q11314;
+import java.util.*;
+public class CollectionsDemo {
+	public static void main(String ... args) {
+		List<Integer> integerList = Arrays.asList(3, 33, 333, 3333, 33333, 333333);
+		System.out.println("integerList : " + integerList);
+		Collections.shuffle(integerList, new Random(1));
+		System.out.println("After shuffle integerList : " + integerList);
+		Collections.sort(integerList);
+		System.out.println("After sort integerList : " + integerList);
+		Collections.fill(integerList, 7);
+		System.out.println("After filling integerList with 7 : " + integerList);
+	}
+}
+
+
+__________________________________________________
+
+
+package q11315;
+import java.util.*;
+public class DateDemo {
+	public static void main(String ... args) {
+		Date thisMoment = new Date();
+		long millisecondsSinceEpochStart = thisMoment.getTime();
+		System.out.println("This Moment : " + thisMoment);
+		System.out.println("Total milli seconds from epoch to this moment : " + millisecondsSinceEpochStart);
+	}
+}
+
+
+__________________________________________________
+
+
+package q11397;
+import java.util.*;
+public class DateExample {
+	public static void main(String ... args) throws InterruptedException {
+		System.out.println("Sleeping for 1 second...");
+		Date timeAsDate = new Date();
+		long oldTimeInMillis = timeAsDate.getTime();
+		Thread.sleep(1000);
+		long newCurrentTimeInMillis = System.currentTimeMillis();
+		if (newCurrentTimeInMillis - oldTimeInMillis >= 1000) {
+			System.out.println("This thread resumed after 1 or more seconds");
+		}
+	}
+}
+
+
+_________________________________________________
+
+
+package q11398;
+import java.util.*;
+import java.text.*;
+public class DateFormatInJapan {
+	public static String getJapaneseShortDate(Date date) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd", Locale.JAPAN);
+		return sdf.format(date);
+	}
+}
+
+___________________________________________________
+
+
+package q11399;
+import java.util.*;
+import java.text.*;
+public class SimpleDateFormatDemo {
+	public static void main(String ... args) throws ParseException {
+		
+		String dateText = "15-08-1947";
+		
+				SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+				
+						Date parsedDate = sdf.parse(dateText);
+						
+								SimpleDateFormat sdf1 = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy", Locale.US);
+								
+										System.out.println("parsedDate : " + sdf1.format(parsedDate));
+	}
+}
+
+
+__________________________________________________
+
+
+package q11589;
+import java.util.*;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+public class CalendarDemo {
+	public String setTime(String dateString) throws ParseException {
+
+		SimpleDateFormat sd = new SimpleDateFormat("MMM-dd-yyy");
+		
+
+		Date date =  sd.parse(dateString);
+		
+		
+		Calendar currentTime = Calendar.getInstance();
+		
+
+    	currentTime.setTime(date);
+    	
+    	
+    	return sd.format(currentTime.getTime());
+	}
+}
+		
+
+____________________________________________________
+
+
+package q11590;
+import java.util.*;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+public class CalendarAddition {
+	public String addDays(String dateString, int days) throws ParseException {
+				SimpleDateFormat sd = new SimpleDateFormat("MMM-dd-yyy");
+				
+				        
+				        
+				        		Date date =  sd.parse(dateString);
+				        		
+				        		
+				        		
+				        				Calendar cal = Calendar.getInstance();
+				        				
+				        				
+				        				
+				        						cal.setTime(date);
+				        						
+				        						
+				        						
+				        						        cal.add(Calendar.DAY_OF_MONTH, days);
+				        						        
+				        						        
+				        						        
+				        						                return sd.format(cal.getTime());
+				        						                
+
+	}
+}
+
+
+_____________________________________________
+
+
+E
+
+_____________________________________________
+
+
+package q11592;
+import java.time.*;
+import java.time.temporal.*;
+public class LocalDateDemo {
+	public static void main(String ... args) {
+		LocalDate javaBirthday = LocalDate.of(1995, Month.MAY, 23);
+		TemporalAdjuster adjuster = TemporalAdjusters.next(DayOfWeek.SUNDAY);
+		LocalDate nextSunday = javaBirthday.with(adjuster);
+		System.out.printf("Java's birthday was on %s, and the cake was cut on next Sunday : %s.%n", javaBirthday, nextSunday);
+	}
+}
+
+
+____________________________________________
+
+
+package q11316;
+import java.util.*;
+public class RandomDemo {
+	public static void main(String[] args) {
+		Random rand = new Random(10);
+		for (int i = 0; i < 5; i++) {
+			System.out.println(rand.nextInt(100));
+		}
+	}
+}
+
+
+_____________________________________________
