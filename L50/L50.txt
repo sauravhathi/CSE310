@@ -1,0 +1,96 @@
+// L50
+// Saurav Hathi
+// https://www.youtube.com/c/SauravHathi
+
+
+
+package q11340;
+public class SimpleThreadDemo {
+	public static void main(String[] args) throws InterruptedException {
+		Counter c1 = new Counter("Ganga");
+		Counter c2 = new Counter("Yamuna");
+		Thread t1 = new Thread(c1);
+		Thread t2 = new Thread(c2);
+		t1.start();
+		t2.start();
+		System.out.println("started t1 and t2 threads");
+		t1.join();
+		System.out.println("t1 has completed. t1.isAlive() = " + t1.isAlive());
+		t2.join();
+		System.out.println("t2 has completed. t2.isAlive() = " + t2.isAlive());
+	}
+}
+class Counter implements Runnable {
+	private String name;
+	public Counter(String name) {
+		this.name = name;
+	}
+	public void run() {
+		for (int i = 0; i < 3; i++) {
+			System.out.println(name + " : " + i);
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}
+
+
+_______________________________________________________
+
+
+package q11341;
+public class SleepDemo {
+	public static void main(String[] args) {
+		try {
+			System.out.println("About to take a short nap. Start counting from 1 to 2.");
+			Thread.sleep(1000);
+			System.out.println("Fresh after 2 seconds of good sleep!");
+			Thread.sleep(1000);
+			System.out.println("Very fresh after sleeping for 2 more seconds!!");
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+}
+
+
+_______________________________________________________
+
+
+package q11342;
+public class SimpleThreadDemo2 {
+	public static void main(String[] args) throws InterruptedException {
+		Counter c1 = new Counter("Ganga");
+		Thread t1 = new Thread(c1);
+		System.out.println("Before start() method call t1.getState() = " + t1.getState());
+		System.out.println("Before start() method call t1.isAlive() = " + t1.isAlive());
+		t1.start();
+		System.out.println("After start() method call t1.getState() = " + t1.getState());
+		System.out.println("After start() method call t1.isAlive() = " + t1.isAlive());
+		t1.join();
+		System.out.println("After t1 has terminated t1.getState() = " + t1.getState());
+		System.out.println("After t1 has terminated t1.isAlive() = " + t1.isAlive());
+	}
+}
+class Counter implements Runnable {
+	private String name;
+	public Counter(String name) {
+		this.name = name;
+	}
+	public void run() {
+		for (int i = 0; i < 3; i++) {
+			System.out.println(name + " : " + i);
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}
+
+
+_______________________________________________________
