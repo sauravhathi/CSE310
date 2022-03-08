@@ -16,7 +16,7 @@ for any query contact me through telegram:
 
 https://t.me/sauravhathi_yt_discussion
 
-https://www.youtube.com/channel/UCp6MFWao5vWRnyRCxBsKnfw
+https://www.youtube.com/c/SauravHathi
 
 https://www.instagram.com/saurav_hathi/
 
