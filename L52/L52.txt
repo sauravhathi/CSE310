@@ -1,0 +1,151 @@
+//L52
+
+
+package q11347;
+public class RunnableDemo {
+	public static void main(String[] args) throws InterruptedException {
+		Counter c1 = new Counter("Ganga");
+		Counter c2 = new Counter("Yamuna");
+		Counter c3 = new Counter("Narmada");
+		c1.run();
+		Thread t1 = new Thread(c2);
+		Thread t2 = new Thread(c3);
+		t1.start();
+		System.out.println("called t1.start()");
+		t2.start();
+		System.out.println("called t2.start()");
+		t1.join();
+		System.out.println("t1 has completed. t1.isAlive() = " + t1.isAlive());
+		t2.join();
+		System.out.println("t2 has completed. t2.isAlive() = " + t2.isAlive());
+	}
+}
+class Counter implements Runnable {
+	private String name;
+	public Counter(String name) {
+		this.name = name;
+	}
+	public void run() {
+		for (int i = 0; i < 3; i++) {
+			System.out.println(name + " : " + i);
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}
+
+
+___________________________________________________________
+
+
+D,F,G
+
+__________________________________________________________
+
+
+package q11349;
+public class ThreadDemo {
+	public static void main(String[] args) throws Exception {
+		Thread t1 = new Thread(new Printer("Good morning", 1, 2));
+		Thread t2 = new Thread(new Printer("Hello", 1, 2));
+		Thread t3 = new Thread(new Printer("Welcome", 3, 1));
+		t1.start();
+		t2.start();
+		t3.start();
+		t1.join();
+		t2.join();
+		t3.join();
+		System.out.println("All the three threads t1, t2 and t3 have completed execution.");
+    }
+}
+class Printer implements Runnable {
+	private String message;
+	private int delay;
+	private int count;
+	public Printer(String message, int delay, int count) {
+		this.message = message;
+		this.delay = delay;
+		this.count = count;
+	}
+	public void run()
+	{
+		for (int i = 0; i < count; i++) 
+		{
+			System.out.println(message);
+			try 
+			{
+				Thread.sleep (delay * 1000);
+			} catch (InterruptedException e)
+			{
+				e.printStackTrace ();
+		}
+	}
+	}
+}
+
+
+_______________________________________________________________
+
+
+package q11350;
+public class JoinThreadDemo {
+	public static void main(String[] args) throws InterruptedException {
+		Thread t1 = new Thread (new Counter("Spain"));
+		Thread t2 = new Thread (new Counter("UAE"));
+		System.out.println("t1 before start t1.isAlive() : " + t1.isAlive());
+		System.out.println("t2 before start t2.isAlive() : " + t2.isAlive());
+		t1.start ();
+		t2.start ();
+		
+		
+		System.out.println("started t1 and t2 threads");
+		System.out.println("t1 after start t1.isAlive() : " + t1.isAlive ());
+		t2.join ();
+		
+		System.out.println("t2 after start t2.isAlive() : " + t2.isAlive ());
+	}
+}
+class Counter implements Runnable {
+	private String name;
+	public Counter(String name) {
+		this.name = name;
+	}
+	public void run() {
+		for (int i = 0; i < 3; i++) {
+			System.out.println(name + " : " + i);
+		}
+	}
+}
+
+
+___________________________________________________________________
+
+
+package q11351;
+public class DaemonThreadDemo extends Thread {
+	public void run() {
+		if (Thread.currentThread ().isDaemon ()) {
+			System.out.println("This is daemon thread");
+		} else {
+			System.out.println("This is not a daemon thread");
+		}
+	}
+	public static void main(String[] args) {
+		DaemonThreadDemo t1 = new DaemonThreadDemo(); 
+		DaemonThreadDemo t2 = new DaemonThreadDemo(); 
+		DaemonThreadDemo t3 = new DaemonThreadDemo();
+		t1.setDaemon (true);
+		t1.start ();
+		t2.start ();
+		t3.start ();
+	
+	}
+}
+
+
+____________________________________________________________________
+
+

@@ -1,0 +1,114 @@
+//L51
+
+
+package q11343;
+import java.util.*;
+public class SimpleThreadDemo3 {
+	public static void main(String[] args) throws InterruptedException {
+		List<String> entriesList = Collections.synchronizedList(new ArrayList<String>());
+		Counter c1 = new Counter("Ganga", entriesList);
+		Counter c2 = new Counter("Yamuna", entriesList);
+		Thread t1 = new Thread(c1);
+		Thread t2 = new Thread(c2);
+		t1.start();
+		t2.start();
+		System.out.println("started t1 and t2 threads");
+		t1.join();
+		System.out.println("t1 has completed. t1.isAlive() = " + t1.isAlive());
+		t2.join();
+		System.out.println("t2 has completed. t2.isAlive() = " + t2.isAlive());
+		System.out.println("At the end entriesList contains ");
+		for (String entry:entriesList) {
+			System.out.println(entry);
+		}
+	}
+}
+class Counter implements Runnable {
+	private String name;
+	private List<String> entriesList;
+	public Counter(String name, List<String> entriesList) {
+		this.name = name;
+		this.entriesList = entriesList;
+	}
+	public void run() {
+		for (int i = 0; i < 10; i++) {
+			entriesList.add(name + " : " + i);
+			try {
+				Thread.sleep(50);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}
+
+
+__________________________________________________________
+
+
+B
+
+__________________________________________________________
+
+
+package q11345;
+public class WaitNotifyDemo {
+	public static void main(String[] args) throws InterruptedException {
+		Object sharedLock = new Object();
+		Waiter waiter = new Waiter(sharedLock);
+		Notifier notifier = new Notifier(sharedLock);
+		Thread t1 = new Thread(waiter);
+		Thread t2 = new Thread(notifier);
+		t1.start();
+		t2.start();
+		t2.join();
+		t1.join();
+	}
+}
+class Waiter implements Runnable {
+	private Object sharedLock;
+	public Waiter(Object sharedLock) {
+		this.sharedLock = sharedLock;
+	}
+	public void run() {
+		for (int i = 0; i < 10; i++) {
+			System.out.println("Waiter : " + i);
+			if (i == 5) {
+				System.out.println("Waiter will wait now until notified by Notifier");
+				synchronized (sharedLock) {
+					try {
+						sharedLock.wait();
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+				System.out.println("Waiter has come out of wait.");
+			}
+		}
+	}
+}
+class Notifier implements Runnable {
+	private Object sharedLock;
+	public Notifier(Object sharedLock) {
+		this.sharedLock = sharedLock;
+	}
+	public void run() {
+		System.out.println("Notifier is busy taking a nap to 7 secs.");
+		try {
+			Thread.sleep(200);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.println("Hurray! Notifier is awake and is about to call notify().");
+		synchronized (sharedLock) {
+			sharedLock.notify();
+		}
+	}
+}
+
+
+___________________________________________________________
+
+
+B
+

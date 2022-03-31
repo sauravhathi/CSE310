@@ -1,0 +1,114 @@
+//L54
+
+
+
+package q11354;
+import java.util.*;
+import java.io.*;
+import java.nio.file.*;
+public class ByteStreamsDemo {
+	public static void main(String[] args) throws IOException {
+		StringBuilder sb = new StringBuilder();
+		sb.append("This text was written at 1 time\n");
+		for (int i = 2; i <= 10; i++) {
+			sb.append("This text was written at " + i + " times\n");
+		}
+		InputStream bais = new ByteArrayInputStream(sb.toString().getBytes());
+		OutputStream fos = null;
+		String outputFileName = "ByteStreamsDemo.txt";
+		try {
+			fos = new FileOutputStream(outputFileName);
+			byte[] byteArr = new byte[512];
+			int bytesRead = 0;
+			while ((bytesRead = bais.read(byteArr)) != -1) {
+				fos.write(byteArr, 0, bytesRead);
+			}
+		} finally {
+			if (fos != null) {
+				fos.close();
+			}
+		}
+		Path outputFilePath = Paths.get(outputFileName);
+		byte[] contentArr = Files.readAllBytes(outputFilePath);
+		System.out.println(new String(contentArr));
+	}
+}
+
+
+________________________________________________________
+
+
+package q11355;
+import java.util.*;
+import java.io.*;
+import java.nio.file.*;
+public class ReaderWriterDemo {
+	public static void main(String[] args) throws IOException {
+		StringBuilder sb = new StringBuilder();
+		sb.append("This text was written at 1 time\n");
+		for (int i = 2; i <= 10; i++) {
+			sb.append("This text was written at " + i + " times\n");
+		}
+		Reader reader = new StringReader(sb.toString());
+		String outputFileName = "CharStreamsDemo.txt";
+		try (FileWriter fw = new FileWriter(outputFileName)) {
+			char[] charsArr = new char[512];
+			int charsRead = 0;
+			while ((charsRead = reader.read(charsArr)) != -1) {
+				fw.write(charsArr, 0, charsRead);
+			}
+		}
+		Path outputFilePath = Paths.get(outputFileName);
+		byte[] contentArr = Files.readAllBytes(outputFilePath);
+		System.out.println(new String(contentArr));
+	}
+}
+
+
+______________________________________________________________
+
+
+package q11356;
+import java.io.*;
+public class SerializationDemo {
+	public static void main(String[] args) throws IOException, ClassNotFoundException {
+		Student st1 = new Student("CT1007", "Ganga", 25, 71, "Hard-Working");
+		Student st2 = new Student("CT1008", "Yamuna", 26, 51, "Absent-Minded");
+		String outputFileName = "ObjectStreamsDemo.txt";
+		Student restoredSt1 = null;
+		Student restoredSt2 = null;
+		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(outputFileName));
+				ObjectInputStream ois = new ObjectInputStream(new FileInputStream(outputFileName))) {
+			System.out.println("Before serialization st1 : " + st1);
+			System.out.println("Before serialization st2 : " + st2);
+			oos.writeObject(st1);
+			oos.writeObject(st2);
+			restoredSt1 = (Student) ois.readObject();
+			restoredSt2 = (Student) ois.readObject();
+		}
+		System.out.println("After deserialization st1 : " + restoredSt1);
+		System.out.println("After deserialization st2 : " + restoredSt2);
+	}
+}
+class Student implements Serializable {
+	private String id;
+	private String name;
+	private int age;
+	private transient int seatingPosition;
+	private transient String comments;
+	public Student(String id, String name, int age, int seatingPosition, String comments) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.seatingPosition = seatingPosition;
+		this.comments = comments;
+	}
+	public String toString() {
+		return "Student[ id=" + id + ", name=" + name + ", age=" + age + ", seatingPosition=" + seatingPosition + ", comments=" + comments + " ]";
+	}
+}
+
+
+__________________________________________________________________
+
+
