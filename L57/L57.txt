@@ -1,0 +1,425 @@
+//L57
+
+
+package q11366;
+import java.util.*;
+public class ListDemo {
+	public static void main(String[] args) {
+		List namesList = new ArrayList();
+		
+		namesList.add("John Napier");
+		namesList.add("Isaac Newton");
+		System.out.println(namesList);
+		
+		namesList.add(1, "C V Ramana");
+		System.out.println(namesList);
+		
+		namesList.add(1, "Charles Babbage");
+		System.out.println(namesList);
+		
+		namesList.remove(0);
+		System.out.println(namesList);
+		namesList.set(2, "Bose");
+		
+		
+		System.out.println(namesList);
+	}
+}
+
+
+_____________________________________________________
+
+
+package q11367;
+import java.util.*;
+public class ArrayListDemo {
+	public static void main(String[] args) {
+		List aList = new ArrayList ();
+		System.out.println("aList.size() = " + aList.size());
+		System.out.println("aList = " + aList);
+		aList.add("First Entry");
+		aList.add("Second Entry");
+		System.out.println("aList.size() = " + aList.size ());
+		System.out.println("aList = " + aList);
+		
+		
+		List bList = new ArrayList (aList);
+		System.out.println("bList.size() = " + bList.size ());
+		System.out.println("bList = " + bList);
+		List cList = new ArrayList (20);
+		System.out.println ("cList.size() = " + cList.size ());
+		System.out.println ("cList = " + cList);
+	}
+}
+
+____________________________________________________
+
+
+package q11368;
+import java.util.*;
+public class ArrayListIterationDemo {
+	public static void main(String[] args) {
+		List namesList = new ArrayList();
+		for (String argument : args) {
+			if (Character.isUpperCase(argument.charAt(0))) {
+				namesList.add(argument);
+			}
+		}
+		for (Object name : namesList) {
+			System.out.println(name);
+		}
+		for (int i = 0; i < namesList.size(); i++) {
+			Object name = namesList.get(i);
+			System.out.println("Name at index " + i + " is : " + name);
+		}
+	}
+}
+
+____________________________________________________
+
+
+package q11369;
+import java.util.*;
+public class ArrayListMethodsDemo {
+	public static void main(String[] args) {
+		List aList = new ArrayList(args.length);
+		for (String argument : args) {
+			aList.add(argument);
+		}
+		System.out.println("aList = " + aList);
+		System.out.println("aList.size() = " + aList.size());
+		Object removedElement = aList.remove(3);
+		System.out.println("removedElement = " + removedElement);
+		System.out.println("aList = " + aList);
+		Object replacedElement = aList.set(0, "Steve Jobs");
+		System.out.println("aList = " + aList);
+		aList.add(0, "Bill Gates");
+		System.out.println("aList = " + aList);
+	}
+}
+
+_____________________________________________________
+
+
+package q11956;
+import java.util.*;
+public class ListDemo {
+	public static void main(String[] args) {
+		List<String> namesList = new ArrayList<String>();
+namesList.add("Sunday");
+namesList.add("Monday");
+namesList.add("Tuesday");
+namesList.add("Wednesday");
+namesList.add("Thursday");
+namesList.add("Friday");
+namesList.add("Saturday");
+
+		System.out.println(namesList);
+	}
+}
+
+_______________________________________________
+
+
+package q11957;
+import java.util.*;
+public class ListDemo {
+	public static void main(String[] args) {
+		List namesList = new ArrayList();
+	namesList.add("Mercury");
+	namesList.add("Venus");
+	namesList.add("Earth");
+	namesList.add("Mars");
+	System.out.println(namesList);
+	namesList.remove(1);
+		
+		System.out.println(namesList);
+	}
+}
+
+
+________________________________________________
+
+
+package q11958;
+import java.util.*;
+public class ListDemo {
+	public static void main(String[] args) {
+		List<String> namesList = new ArrayList<String>();
+		namesList.add("Mercury");
+		namesList.add("Venus");
+		namesList.add("Earth");
+		namesList.add("Mars");
+		System.out.println(namesList.get(1));
+	}
+}
+
+
+_______________________________________________
+
+
+package q11959;
+import java.util.*;
+public class ListDemo {
+	public static void main(String[] args) {
+		List namesList = new ArrayList();
+		namesList.add("Mercury");
+		namesList.add("Venus");
+		namesList.add("Earth");
+		namesList.add("Mars");
+		System.out.println(namesList);
+		namesList.set(0, "Sun");
+		namesList.set(2, "Jupiter");
+		
+		System.out.println(namesList); 
+		
+	}
+}
+
+
+_________________________________________________
+
+
+package q11960;
+import java.util.*;
+public class ListDemo {
+	public static void main(String[] args) {
+		List<String> namesList1 = new ArrayList<String>();
+		namesList1.add("Mercury");
+		namesList1.add("Venus");
+		namesList1.add("Earth");
+		namesList1.add("Mars");
+		System.out.print("Elements in List1: ");
+		System.out.println(namesList1);
+		
+		
+		
+		List<String> namesList2 = new ArrayList<String>();
+		namesList2.add("Jupiter");
+		namesList2.add("Saturn");
+		namesList2.add("Uranus");
+		namesList2.add("Neptune");
+		
+		System.out.print("Elements in List2: ");
+		System.out.println(namesList2);
+		System.out.println("After adding List2 elements to List1");
+		namesList1.addAll (namesList2);
+		// add all List2 elements to List1
+		
+		
+		for(Object name:namesList1) {
+			System.out.println(name);
+		}
+		
+		System.out.println("After adding List2 elements at index 2 the list becomes:");
+		namesList1.addAll (2, namesList2);
+		// add all LIst2 elements at index 2
+		
+		for(Object name:namesList1) {
+			System.out.println(name);
+		}
+	
+	}
+}
+
+
+
+________________________________________________________
+
+
+package q24078;
+import java.util.*;
+public class ListDemo {
+	public static void main(String[] args) {
+		List<String> namesList = new ArrayList<String>();
+	
+		namesList.add("Sunday");
+		namesList.add("Monday");
+		namesList.add("Tuesday");
+		namesList.add("Wednesday");
+		namesList.add("Thursday");
+		namesList.add("Friday");
+		namesList.add("Saturday");
+
+		System.out.println(namesList);
+		System.out.println("The element at the given index is " + namesList.get (3));
+	
+	}
+}
+
+
+____________________________________________________
+
+package q24079;
+import java.util.*;
+public class ListDemo {
+	public static void main(String[] args) {
+		List<String> namesList = new ArrayList<String>();
+		for(int i=0;i<args.length;i++) {
+			namesList.add(args[i]);
+		}
+		System.out.println(namesList);
+
+
+	}
+}
+
+__________________________________________________
+
+
+package q24081;
+import java.util.*;
+public class ListDemo {
+	public static void main(String[] args) {
+		List<String> namesList = new ArrayList<String>();
+		for(int i=0;i<args.length;i++) {
+			namesList.add(args[i]);
+		}
+	
+		System.out.println(namesList);
+		System.out.println("The element at index 2 is "+namesList.get(2));
+
+	}
+}
+
+________________________________________________________________
+
+
+package q24082;
+import java.util.*;
+public class ListDemo {
+	public static void main(String[] args) {
+		List<String> namesList = new ArrayList<String>();
+		for( int i = 0; i < args.length; i++)
+		{
+			namesList.add (args[i]);
+		}
+		System.out.println("Before removing the element at index 2 the list is\n" +namesList);
+		namesList.remove (2);
+		System.out.println("After removing the element at index 2 is the list is\n" +namesList);
+		
+	
+	}
+}
+
+____________________________________________________________
+
+
+package q24083;
+import java.util.*;
+public class ListDemo {
+	public static void main(String[] args) {
+		// Notice the use of generics. We will learn more about them later.
+		// The type parameter <String> will ensure that your code cannot add any 
+		// other object than those of type String
+		List<String> namesList = new ArrayList<String>();
+		for(int i=0;i<args.length;i++) {
+			namesList.add(args[i]);
+		}
+		
+		Iterator itr = namesList.iterator();
+		while (itr.hasNext()) {
+			System.out.println(itr.next());
+		}
+	
+	}
+}
+
+_________________________________________________________________
+
+
+package q24084;
+import java.util.*;
+public class ListDemo {
+	public static void main(String[] args) {
+		// Notice the use of generics. We will learn more about them later.
+		// The type parameter <String> will ensure that your code cannot add any 
+		// other object than those of type String
+		List<String> namesList = new ArrayList<String>();
+		for (int i = 0; i < args.length; i++)
+		{ namesList.add(args[i]);
+		}
+		namesList.add(2, "Green");
+		System.out.println("After adding the given element at index 2 the list becomes\n"+ namesList);
+		System.out.println("The element at index 2 is " + namesList.get (2));
+		namesList.remove (2);
+		System.out.println("After removing the element at index 2 the list becomes\n" + namesList);
+	}
+}
+
+________________________________________________________________
+
+
+package q11955;
+import java.util.*;
+public class ArrayListIterationDemo {
+	public static void main(String[] args) {
+		List<String> namesList = new ArrayList<String>();
+		for (int i = 0; i < args.length; i++) { 
+			if (args[i].charAt (0) >= 'A' && args[i].charAt (0) <= 'Z') {
+			namesList.add (args[i]);
+			}
+		}
+		for (Object name : namesList) {
+			System.out.println(name);
+			
+		}
+	
+	}
+}
+
+________________________________________________________________
+
+package q23673;
+import java.util.*;
+public class ArrayListIterationDemo {
+	public static void main(String[] args) {
+	List < String > namesList = new ArrayList < String > ();
+	for ( int i = 0; i < args.length; i++) {
+		namesList.add (args[i]);
+	}
+	for ( int i = 0; i <namesList.size (); i++)
+	{
+		System.out.println("Name at index " + i + " is : " + namesList.get (i));
+	}
+	}
+	}
+
+______________________________________________________________
+
+
+package q23676;
+import java.util.*;
+public class ArrayListIterationDemo {
+	public static void main(String[] args) {
+List < String > namesList = new ArrayList < String > ();
+for (int i = 0; i < args.length; i++)
+{
+	namesList.add (args[i]);
+}
+System.out.println("Name at index 2 is : " + namesList.get (2));
+}
+}
+
+
+___________________________________________________________
+
+
+package q24085;
+import java.util.*;
+public class ArrayListIterationDemo {
+	public static void main(String[] args) {
+		List<String> namesList = new ArrayList<String>();
+		for ( int i = 0; i < args.length; i++)
+		{
+			namesList.add(args[i]);
+		}
+		System.out.println (namesList);
+		System.out.println("Size of the list is : " + namesList.size ());
+	}
+}
+	
+
+__________________________________________________________
+
+
