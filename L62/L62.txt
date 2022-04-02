@@ -1,0 +1,90 @@
+//L62
+
+
+
+package q11394;
+public class CustomGenericClassExample {
+	public static void main(String[] args) {
+		A<String> a1 = new A<>("Ganga");
+		System.out.println("a1.getValue() = " + a1.getValue());
+		A<Boolean> a2 = new A<>(true);
+		System.out.println("a2.getValue() = " + a2.getValue());
+	}
+}
+class A<T> {
+	private T t;
+	public A(T t) {
+		this.t = t;
+	}
+	public T getValue() {
+		return t;
+	}
+	public void setValue(T t) {
+		this.t = t;
+	}
+}
+
+
+________________________________________________________
+
+
+package q11395;
+import java.util.*;
+public class BoundedTypeExample {
+	public static void main(String[] args) {
+		List<String> namesList = new ArrayList<>();
+		namesList.add("Ganga");
+		namesList.add("Godavari");
+		namesList.add("Krishna");
+		Set<String> namesSet = new LinkedHashSet<>();
+		namesSet.add("Ganga");
+		namesSet.add("Godavari");
+		namesSet.add("Krishna");
+		namesSet.add("Yamuna");
+		namesSet.add("Narmada");
+		System.out.println("largerCollection : " + largerCollection(namesList, namesSet));
+	}
+	public static <T extends Collection> T largerCollection(T collection1, T collection2) {
+		return (collection1.size() > collection2.size())? collection1 : collection2;
+	}
+}
+
+
+__________________________________________________________________
+
+
+package q11396;
+import java.util.*;
+public class WildCardTypesDemo {
+	public static void main(String[] args) {
+		List<? extends Number> upperList = Arrays.asList(2, 3, 4);
+		List<? super Number> lowerList = new ArrayList<>();
+		List<Integer> noBoundsList = new ArrayList<>();
+		upperBoundedMethod(upperList);
+		lowerBoundedMethod(lowerList);
+		noBoundedMethod(noBoundsList);
+	}
+	public static void upperBoundedMethod(List<? extends Number> list) {
+		System.out.println("In upperBoundedMethod");
+		for (Number number : list) {
+			System.out.println(number);
+		}
+	}
+	public static void lowerBoundedMethod(List<? super Integer> list) {
+		System.out.println("In lowerBoundedMethod");
+		list.add(2);
+		list.add(3);
+		list.add(4);
+		System.out.println("list : " + list);
+	}
+	public static void noBoundedMethod(List<Integer> list) {
+		System.out.println("In noBoundedMethod");
+		list.add(new Integer(8));
+		list.add(new Integer(7));
+		System.out.println("list : " + list);
+	}
+}
+
+
+
+________________________________________________________

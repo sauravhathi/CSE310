@@ -1,0 +1,81 @@
+//L61
+
+
+package q11388;
+import java.util.*;
+public class GenericListDemo {
+	public static void main(String[] args) {
+		List<Integer> numbersList = new ArrayList<Integer>();
+		numbersList.add(new Integer(72));
+		numbersList.add(78);
+		numbersList.add(81);
+		int total = 0;
+		for (int number : numbersList) {
+			total = total + number;
+		}
+		System.out.println("total = " + total);
+	}
+}
+
+
+____________________________________________________
+
+
+A,B
+
+
+_______________________________________________
+
+
+D
+
+________________________________________________
+
+
+package q11391;
+import java.util.*;
+public class SimpleArrayListDemo {
+	public static void main(String[] args) {
+		List<String> namesList = new ArrayList<String>();
+		namesList.add("Hyderabad");
+		namesList.add("Bangalore");
+		namesList.add("Chennai");
+		
+	
+	
+		for (String name : namesList) {
+			System.out.println(name.substring(0,3));
+	
+	
+		}
+	}
+}
+
+
+_______________________________________________
+
+
+package q11392;
+import java.util.*;
+public class SimpleMapDemo {
+	public static void main(String[] args) {
+		Map<String, String> countryCodesMap = new HashMap<String, String>();
+		countryCodesMap.put("IN", "India");
+		countryCodesMap.put("CA", "Canada");
+		countryCodesMap.put("AG", "Argentina");
+		countryCodesMap.put("BR", "Brazil");
+		Set<String> codesSet = countryCodesMap.keySet();
+		for (String code : codesSet) {
+			String countryName = countryCodesMap.get(code);
+			System.out.println(code + " is the code for : " + countryName);
+		}
+	}
+}
+
+
+_________________________________________________
+
+
+A,B,D,E
+
+_________________________________________________
