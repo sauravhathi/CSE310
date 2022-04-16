@@ -79,9 +79,9 @@ public class ThrowExample {
 		
 			static void checkEligibilty(int age, int weight) {
 				
-						if(age < 12 && weight < 40) { // Write the condition
+						if(age < 12 && weight < 40) { 
 						
-									 // Fill the missing code
+									
 									 
 									              throw(new ArithmeticException("Student is not eligible for registration"));
 									              
@@ -210,7 +210,7 @@ class InsufficientFundsException extends Exception {
 				        
 				                
 				                
-				                		// initialize
+				                	
 				                		
 			}
 			
@@ -218,7 +218,7 @@ class InsufficientFundsException extends Exception {
 					
 					        return amount;
 					        
-					        		// return
+					        	
 					        		
 				}
 				
@@ -234,7 +234,7 @@ class CheckingAccount {
 					
 					        accountNumber = number;
 					        
-					        		// initialize
+					        		
 					        		
 				}
 				
@@ -242,7 +242,7 @@ class CheckingAccount {
 						
 						        balance += amount;
 						        
-						        		// add amount to balance
+						        		
 						        		
 					}
 					
@@ -263,7 +263,7 @@ class CheckingAccount {
 								
 								        return balance;
 								        
-								        		// return
+								        		
 								        		
 							}
 							
@@ -271,7 +271,7 @@ class CheckingAccount {
 									
 									        return accountNumber;
 									        
-									        		// return
+									        	
 									        		
 								}
 								

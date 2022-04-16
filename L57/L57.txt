@@ -204,7 +204,6 @@ public class ListDemo {
 		System.out.println(namesList2);
 		System.out.println("After adding List2 elements to List1");
 		namesList1.addAll (namesList2);
-		// add all List2 elements to List1
 		
 		
 		for(Object name:namesList1) {
@@ -213,7 +212,6 @@ public class ListDemo {
 		
 		System.out.println("After adding List2 elements at index 2 the list becomes:");
 		namesList1.addAll (2, namesList2);
-		// add all LIst2 elements at index 2
 		
 		for(Object name:namesList1) {
 			System.out.println(name);
@@ -309,9 +307,7 @@ package q24083;
 import java.util.*;
 public class ListDemo {
 	public static void main(String[] args) {
-		// Notice the use of generics. We will learn more about them later.
-		// The type parameter <String> will ensure that your code cannot add any 
-		// other object than those of type String
+
 		List<String> namesList = new ArrayList<String>();
 		for(int i=0;i<args.length;i++) {
 			namesList.add(args[i]);
@@ -332,9 +328,7 @@ package q24084;
 import java.util.*;
 public class ListDemo {
 	public static void main(String[] args) {
-		// Notice the use of generics. We will learn more about them later.
-		// The type parameter <String> will ensure that your code cannot add any 
-		// other object than those of type String
+
 		List<String> namesList = new ArrayList<String>();
 		for (int i = 0; i < args.length; i++)
 		{ namesList.add(args[i]);

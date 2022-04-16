@@ -145,7 +145,7 @@ package q11975;
 import java.util.*;
 public class SetDemo {
 	public static void main(String[] args) {
-		Set<String> namesSet = new HashSet <String> ();
+		Set<String> namesSet = new LinkedHashSet <String> ();
 namesSet.add("Ganga");
 namesSet.add("Krishna");
 namesSet.add("Godavari");
