@@ -31,12 +31,12 @@ public class MapDemo {
 		countryCodesMap.put("IN", "Bharat");
 		System.out.println("Map entries : " + countryCodesMap);
 		
-		System.out.println("Value for UK is : " + countryCodesMap.get("UK"));//Fill the missing code here get the value for key UK
-		
-		System.out.println("Removing entry for US : " + countryCodesMap.remove("US")); //Fill the missing code remove the key US
+		System.out.println("Value for UK is : " + countryCodesMap.get("UK"));
+		System.out.println("Removing entry for US : " + countryCodesMap.remove("US"));
 		System.out.println("Map entries : " + countryCodesMap);
 	}
 }
+
 
 
 _______________________________________________________________
