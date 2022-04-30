@@ -1,6 +1,6 @@
 # CSE310
 ### CSE310 - PROGRAMMING IN JAVA (21222)
-codetantra java answers github
+
 ```bash
   https://t.me/sauravhathi_yt_discussion
 ```
