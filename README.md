@@ -5,7 +5,7 @@
 ```
 
 ```bash
-  https://www.youtube.com/channel/UCp6MFWao5vWRnyRCxBsKnfw
+  https://www.youtube.com/c/SauravHathi
 ```
 
 ```bash
